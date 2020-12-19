@@ -1,3 +1,7 @@
+"""
+CHANGE LOG: Ver : 0.0
+>> Starting with the basics
+"""
 from tkinter import *
 from PIL import Image, ImageTk
 
