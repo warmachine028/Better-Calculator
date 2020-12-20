@@ -1,8 +1,14 @@
 """
 CHANGE LOG: Ver : 0.0
+>> 19th December 2020
 >> Starting with the basics
+>> Added 2 themes
+
+Known Issues
+>> Radio Button does'nt show theme initially
 """
 from tkinter import *
+
 from PIL import Image, ImageTk
 
 # Button properties
