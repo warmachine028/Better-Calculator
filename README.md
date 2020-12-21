@@ -1,5 +1,5 @@
 # Better Calculator
-<i>updated: Sunday, 20th December 2020</i>
+<i>updated: Sunday, 21th December 2020</i>
 <h3>My first new application</h3>
 
 - This is my first Project in github.
@@ -8,4 +8,5 @@
 - This is a completely new concept. 
 - Please contribute to it 🙏 and show me how to imporve my github skills and update this project. :) 
 - Please find issues and suggest changes.
-- Download the Latest version: V0.1. 
+- Old versions archived in '/versions' folder 
+- Download the Latest version: Better Calculator.py. 
