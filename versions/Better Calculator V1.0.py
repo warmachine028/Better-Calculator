@@ -3,7 +3,6 @@ CHANGE LOG: Ver : 1.0
 >> 22nd December 2020
 >> Added scientific mode
 >> Removed hover over glitches from light theme
->> Added scientific mode
 >> Added scientific properties
 >> Reduced Lot of unnecessary code
 >> Added Comments in code
