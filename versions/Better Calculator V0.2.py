@@ -1,5 +1,6 @@
 """
 CHANGE LOG: Ver : 0.2
+>> 21st December 2020
 >> Reduced code for equal-screen (enterclick()) function
 
 """
