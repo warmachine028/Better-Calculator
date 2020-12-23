@@ -78,7 +78,6 @@ def change_theme():
     """Function Changes Theme from radio button input"""
     # For Light Theme
     global bg_color, fg_color, sci_bg, hover, inv_color, hover_inverse
-    print(sci_bg)
     if _variable.get() == "Light Theme":
         bg_color = "white"; fg_color = "black"; hover = 'grey'; sci_bg = dark_grey
         inv_color = blue
