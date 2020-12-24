@@ -42,7 +42,7 @@ Requirements:
 ![Open](Images/open.png)
 
 - Then you can see this window
-![calculator](Images/Calculator.png)
+![calculator](Images/calculator.png)
 
 ## Reason for me choosing this Project
 
