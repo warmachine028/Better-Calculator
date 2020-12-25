@@ -1,0 +1,6 @@
+{
+	"MD033": {
+		"allowed_elements": ["div", "br", "a", "img", "p"]
+	},
+	"line-length": false
+}
