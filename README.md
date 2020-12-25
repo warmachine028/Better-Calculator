@@ -33,17 +33,25 @@ Requirements:
 ### 1) How to download
   
 - Press `Code` button
+
 ![Code Button](Images/code.png)
+
 - Then click on `Download ZIP` :
+
 ![ZIP](Images/zip.png)
+
 - Then extract the file in a new folder using :
+
 [7zip](https://www.7-zip.org/a/7z1900-x64.exe) or [winrar](https://www.win-rar.com/predownload.html?&L=0)
 
 ### 2) How to use
 
 - Simply click 'Open'
+
 ![Open](Images/open.png)
+
 - Then you can see this window
+
 ![calculator](Images/calculator.png)
 
 --------------------------
