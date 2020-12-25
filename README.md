@@ -80,7 +80,8 @@
 
 - I took up this project as a lockdown hobby but later turned it into a serious project as I had to do something for my University Assignment.
 
-- The Pandemic was very booring and monotonic so I thought of making something which is necessary and fulfils the following criterias:-
+- The Pandemic was very booring and monotonic so I thought of making something which is necessary and fulfils the following criterias :-
+
   i) Useful
 
   ii) Easy to use
