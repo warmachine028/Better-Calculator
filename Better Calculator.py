@@ -1,25 +1,15 @@
 """
-CHANGE LOG: Ver : 1.2
->> 24th December 2020
->> Improved UI
->> Added Seperate colour codings
->> Added Exclusive Always on top feature 
-    (press calculator  icon to Activate)
-    -> Dark:
-        - Blue when Active
-        - White while Deactive
-    -> Light:
-        - Red when Active
-        - Black while Deactive
-
+CHANGE LOG: Ver : 1.3
+>> 25th  December 2020
+>> Minor improvements
+>> Superimproved Button Attributes in themes
+>> Fixed Inverse Button
 
 Known Bugs:
->> Not working inverse Buttons
 >> Not Working (^) Button
 >> Not Working (e) Button
-
-
 """
+
 
 from tkinter import *
 from PIL import Image, ImageTk
@@ -33,14 +23,14 @@ mint, dark_mint = '#15CA9C', '#177351'
 blue, dark_blue = '#32CAC9', '#299493'
 hover, hover_inverse = '#3B3E3F', dark_mint
 inv_color = mint
-
+aot_color = "cyan"
 # Common Properties
 b_font = "ariel 25 bold"
 b_relief = "groove"
 b_border = 0
 b_width = 2
 b_border_width = 0
-atp_toggle = False
+aot_toggle = False
 
 # For buttons having usual 'fg_color' foreground
 widget_list0 = list()
@@ -54,25 +44,25 @@ radio_list = list()
 
 # some Functions - Back_end
 
-def atp():
-    global atp_toggle
-    if not atp_toggle:
+def aot():
+    global aot_toggle
+    if not aot_toggle:
         root.attributes('-topmost', True)
-        label['fg'] = "red" if bg_color == "white" else "cyan"
+        label['fg'] = aot_color
         label['font'] = 'Verdana 12 italic'
-        atp_toggle = True
+        aot_toggle = True
 
     else:
         root.attributes('-topmost', False)
         label['fg'] = fg_color
         label['font'] = 'Verdana 13'
-        atp_toggle = False
+        aot_toggle = False
 
 
 # Function Changes theme from radio button input
 def change_theme():
     """Function Changes Theme from radio button input"""
-    global bg_color, fg_color, sci_bg, hover, inv_color, hover_inverse
+    global bg_color, fg_color, sci_bg, hover, inv_color, hover_inverse, aot_color
 
     # For Light Theme
     if _variable.get() == "Light Theme":
@@ -81,10 +71,16 @@ def change_theme():
         bg_color, fg_color = "white", "black"
         hover, hover_inverse = 'grey', dark_blue
         inv_color = blue
+        aot_color = 'red'
 
         root.configure(bg=bg_color)
-        label.configure(bg=bg_color, fg=fg_color)
         label0.configure(bg=bg_color, fg=fg_color, activebackground=bg_color)
+
+        if aot_toggle:
+            label.configure(bg=bg_color, fg=aot_color)
+        else:
+            label.configure(bg=bg_color, fg=fg_color)
+
         sci_upper_frame.configure(bg=sci_bg)
         main_frame.configure(bg=bg_color)
         screen_frame.configure(bg=bg_color)
@@ -106,7 +102,7 @@ def change_theme():
         if inv_toggle:
             inverse_button.configure(bg=inv_color)
         else:
-            inverse_button.configure(bg=dark_grey)
+            inverse_button.configure(bg=sci_bg)
 
         for radiobutton in radio_list:
             radiobutton.configure(bg=bg_color, fg=fg_color, activebackground=bg_color, selectcolor="cyan")
@@ -126,10 +122,16 @@ def change_theme():
         bg_color, fg_color = "black", "white"
         hover, hover_inverse = dark_grey, dark_mint
         inv_color = mint
+        aot_color = 'cyan'
 
         root.configure(bg=bg_color)
-        label.configure(bg=bg_color, fg=fg_color)
         label0.configure(bg=bg_color, fg=fg_color, activebackground=bg_color)
+
+        if aot_toggle:
+            label.configure(bg=bg_color, fg=aot_color)
+        else:
+            label.configure(bg=bg_color, fg=fg_color)
+
         sci_upper_frame.configure(bg=sci_bg)
         main_frame.configure(bg=bg_color)
         screen_frame.configure(bg=bg_color)
@@ -148,7 +150,10 @@ def change_theme():
         for widget in sci_list2:
             widget.configure(bg=sci_bg)
 
-        inverse_button.configure(bg=sci_bg)
+        if inv_toggle:
+            inverse_button.configure(bg=inv_color)
+        else:
+            inverse_button.configure(bg=sci_bg)
 
         for radiobutton in radio_list:
             radiobutton.configure(bg=bg_color, fg=fg_color, activebackground=bg_color, selectcolor="red")
@@ -169,7 +174,16 @@ def change_on_hovering(event):
     parent = event.widget.winfo_parent()
     # print(parent)
     if parent in ['.!frame4.!frame', '.!frame4.!frame2', '.!frame4.!frame3']:
-        widget.configure(bg=hover)
+        if widget['text'] == 'INV':
+            if inv_toggle:
+                widget.configure(bg=hover_inverse)
+
+            else:
+                widget.configure(bg=hover)
+                return
+
+        else:
+            widget.configure(bg=hover)
         return
     widget['bg'] = 'grey'
 
@@ -180,7 +194,14 @@ def return_on_hovering(event):
     widget = event.widget
     parent = event.widget.winfo_parent()
     if parent in ['.!frame4.!frame', '.!frame4.!frame2', '.!frame4.!frame3']:
-        widget.configure(bg=sci_bg)
+        if widget['text'] == 'INV':
+            if inv_toggle:
+                widget.configure(bg=inv_color)
+            else:
+                widget.configure(bg=sci_bg)
+                return
+        else:
+            widget.configure(bg=sci_bg)
         return
     widget['bg'] = bg_color
 
@@ -244,12 +265,11 @@ root.resizable(height=0, width=0)       # Non Resizable window
 main_frame = Frame(root, borderwidth=0, bg=bg_color)  # First frame in Root window - Main_frame
 screen_frame = Frame(root, borderwidth=0, bg=bg_color)  # Second frame in Root window - Screen_frame
 Mid_frame = Frame(root, borderwidth=0, bg=bg_color)  # Third frame in Root window - Third_frame
-
 # Photo Header
 image = Image.open("Calculator.png")  # Opening the Image
 photo = ImageTk.PhotoImage(image.resize((45, 45), Image.ANTIALIAS))  # Resizing the Image
 label0 = Button(main_frame, image=photo, bg=bg_color,
-                activebackground=bg_color, justify=CENTER, bd=0, command=atp)
+                activebackground=bg_color, justify=CENTER, bd=0, command=aot)
 
 # Text Header
 label = Label(main_frame, text="Calculator", font="Verdana 13 ", fg=fg_color, bg=bg_color, justify=CENTER)
@@ -458,11 +478,12 @@ def calculate_sc(event):
 def inv():
     """Function to toggle Inverse"""
     # To Toggle On
+    # change_theme()
     global inv_toggle
     if not inv_toggle:
         sci_upper_frame.pack_forget()
         sci_lower_frame.pack_forget()
-
+        inverse_button.configure(bg=inv_color)
         sci_upper_frame2.pack()
         sci_lower_frame.pack()
         inv_toggle = True
@@ -475,6 +496,7 @@ def inv():
         sci_upper_frame.pack()
         sci_lower_frame.pack()
         inv_toggle = False
+
 
 # Function to perform inverse Scientific Calculations
 def calculate_sc_inv(event):
@@ -518,6 +540,10 @@ for column_number, text in enumerate(button_list):
     sci_list.append(o)
 
 
+def kd():
+    pass
+
+
 # Bottom row Buttons
 i = 0
 button_list2 = ['(', ')', '^', '√x', '!', 'π', 'e', ' ', 'RAD', 'DEG']
@@ -526,7 +552,7 @@ for row_number in range(2):
         o = Button(sci_lower_frame, text=f'{button_list2[i]}',
                    font=sci_font, width=sci_width,
                    bg=sci_bg, bd=1, fg=sci_fg, activebackground=sci_bg, activeforeground=sci_fg)
-        o.grid(row=row_number, column=column_number)
+        o.grid(row=row_number, column=column_number,)
         sci_list2.append(o)
         i += 1
 
@@ -551,7 +577,7 @@ inverse_button.grid(row=1, column=2)
 for button in inverted_list:
     button.bind('<Enter>', change_on_hovering)
     button.bind('<Leave>', return_on_hovering)
-    button.bind('<Button-1>', calculate_sc)
+    button.bind('<Button-1>', calculate_sc_inv)
 
 for button in sci_list:
     button.bind('<Enter>', change_on_hovering)
@@ -569,7 +595,6 @@ inverse_button.bind('<Leave>', return_on_hovering)
 
 mid_button.pack()
 Mid_frame.pack(padx=10, pady=0)
-
 
 # To Keep window always on top
 
