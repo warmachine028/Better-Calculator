@@ -1,6 +1,6 @@
 # [Better Calculator](https://github.com/warmachine028/Better-Calculator)
 
-    updated: Thursday, 24th December 2020
+    updated: Friday, 25th December 2020
 
 ## Introduction
 
@@ -11,9 +11,12 @@
 - This is a completely new concept.
 
 - Please contribute to it 🙏 and show me how to imporve my github skills and update this project. :)
+
 - Please find issues and suggest changes.
+
 - Old versions archived in ['/versions'](https://github.com/warmachine028/Better-Calculator/tree/main/versions) folder
-- Download the Latest version: [Better Calculator.py V1.2](https://github.com/warmachine028/Better-Calculator.git)
+
+- Download the Latest version: [Better Calculator.py V1.3](https://github.com/warmachine028/Better-Calculator.git)
 
 --------------------------
 
@@ -29,7 +32,7 @@ Requirements:
 
 ### 1) How to download
   
-- Press `Code` button 
+- Press `Code` button
 ![Code Button](Images/code.png)
 - Then click on `Download ZIP` :
 ![ZIP](Images/zip.png)
@@ -40,9 +43,10 @@ Requirements:
 
 - Simply click 'Open'
 ![Open](Images/open.png)
-
 - Then you can see this window
 ![calculator](Images/calculator.png)
+
+--------------------------
 
 ## Reason for me choosing this Project
 
