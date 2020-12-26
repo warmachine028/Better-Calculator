@@ -1,6 +1,17 @@
 # CHANGELOG
 
-## _Updated on: 25th December 2020_
+    Updated on: 26th December 2020
+
+## [V1.4]
+
+### _26th December 2020_
+
+- Added more functionalities
+- Fixed (^) button
+- Fixed (e) button
+
+- Known Bugs:
+  - Radio buttons initially not chosen (Theme button)
 
 ## [V1.3]
 

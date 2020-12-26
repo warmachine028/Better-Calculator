@@ -1,3 +1,5 @@
+    updated: Friday, 26th December 2020
+
 <div align="center">
   <a href="https://github.com/warmachine028/Better-Calculator">
     <img width=200 src="Images/calcico.png" alt="Better Calculator">
@@ -6,7 +8,7 @@
     A better and refined alternative
   </p>
   <a href="https://github.com/warmachine028/Better-Calculator">
-    <img src="https://img.shields.io/badge/version-V1.3-cyan" alt="Current Ver: V1.3">
+    <img src="https://img.shields.io/badge/version-V1.4-cyan" alt="Current Ver: V1.3">
   </a>
 
 </div>
@@ -41,7 +43,7 @@
 
 - Old versions archived in ['/versions'](https://github.com/warmachine028/Better-Calculator/tree/main/versions) folder
 
-- Download the Latest version: [Better Calculator.py V1.3](https://github.com/warmachine028/Better-Calculator.git)
+- Download the Latest version: [Better Calculator.py V1.4](https://github.com/warmachine028/Better-Calculator.git)
 
 ---
 
@@ -52,7 +54,7 @@
 > 1. [python 3.x](https://www.python.org/ftp/python/3.9.1/python-3.9.1-amd64.exe)
 > 2. [7zip](https://www.7-zip.org/a/7z1900-x64.exe)
 > 3. Pillow Module. If not installed use command `pip install pillow` in terminal
-
+>
 > ### 2. Downloading
 >
 > i. Press `Code` button :
@@ -60,7 +62,7 @@
 >
 > ii. Then click on `Download ZIP` :
 > ![ZIP](Images/zip.png)
-
+>
 > ### 3. Extracting
 >
 > Then extract the file in a new folder using :
@@ -68,13 +70,12 @@
 
 ## Usage
 
-> 1. Simply click 'Open'
+> 1. Simply click 'Open':
+>    ![Open](Images/open.png)
+> 2. Then you can see this window:
+>    ![calculator](Images/calculator.png)
 
-![Open](Images/open.png)
-
-> 2. Then you can see this window
-
-![calculator](Images/calculator.png)
+---
 
 ## Acknowlegement
 
@@ -90,16 +91,6 @@
 
   iv) Uses some GUI framework
 
-  v) Free and Open-Source
-
-  vi) Thematic
-
-  vii) User Friendly
-
-  viii) Customizable
-
-  ix) All Platform compatible
-
 - The calculators already available online had the following shortcommings according to my study on calculator applications :-
 
   i) Complex to use
@@ -112,7 +103,7 @@
 
   v) Had no have Scientific mode
 
-  vi) Was not Userfriendly
+  vi) Was not so user friendly
 
 - Also those days I could'nt find an appropriate calculator application online which suited my choice and designs.
 
