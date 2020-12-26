@@ -55,7 +55,7 @@
 
 > ### 2. Downloading
 >
-> i. Press `Code` button
+> i. Press `Code` button :
 > ![Code Button](Images/code.png)
 >
 > ii. Then click on `Download ZIP` :
