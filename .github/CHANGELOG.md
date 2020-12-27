@@ -1,6 +1,6 @@
 # CHANGELOG
 
-    Updated on: 26th December 2020
+    Updated on: 27th December 2020
 
 ## [V2.0]
 
