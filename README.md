@@ -1,4 +1,4 @@
-    updated: Friday, 26th December 2020
+    updated: Friday, 27th December 2020
 
 <div align="center">
   <a href="https://github.com/warmachine028/Better-Calculator">
@@ -8,7 +8,7 @@
     A better and refined alternative
   </p>
   <a href="https://github.com/warmachine028/Better-Calculator">
-    <img src="https://img.shields.io/badge/version-V1.4-cyan" alt="Current Ver: V1.3">
+    <img src="https://img.shields.io/badge/version-V2.0-cyan" alt="Current Ver: V1.3">
   </a>
 
 </div>
@@ -40,10 +40,9 @@
 - Please contribute to it 🙏 and show me how to imporve my github skills and update this project. :)
 
 - Please find issues and suggest changes.
-
 - Old versions archived in ['/versions'](https://github.com/warmachine028/Better-Calculator/tree/main/versions) folder
 
-- Download the Latest version: [Better Calculator.py V1.4](https://github.com/warmachine028/Better-Calculator.git)
+- Download the Latest version: [Better Calculator.py V2.0](https://github.com/warmachine028/Better-Calculator/blob/main/Better%20Calculator.py)
 
 ---
 
