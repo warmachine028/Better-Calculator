@@ -6,7 +6,6 @@
 
 ### _27th December 2020_
 
-- 27th December 2020
 - Optimised backend
 - Reduced Code
 - Fixed bugs
