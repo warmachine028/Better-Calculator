@@ -40,9 +40,12 @@
 - Please contribute to it 🙏 and show me how to imporve my github skills and update this project. :)
 
 - Please find issues and suggest changes.
+
 - Old versions archived in ['/versions'](https://github.com/warmachine028/Better-Calculator/tree/main/versions) folder
 
 - Download the Latest version: [Better Calculator.py V2.0](https://github.com/warmachine028/Better-Calculator/blob/main/Better%20Calculator.py)
+
+- View [CHANGELOG](.github/CHANGELOG.md)
 
 ---
 
