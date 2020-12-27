@@ -4,7 +4,6 @@ CHANGE LOG: Ver : 2.0
 >> Optimised backend
 >> Reduced Code
 >> Fixed bugs
-
 """
 
 from tkinter import *
