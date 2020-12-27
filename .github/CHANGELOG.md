@@ -2,6 +2,15 @@
 
     Updated on: 26th December 2020
 
+## [V2.0]
+
+### _27th December 2020_
+
+- 27th December 2020
+- Optimised backend
+- Reduced Code
+- Fixed bugs
+
 ## [V1.4]
 
 ### _26th December 2020_
