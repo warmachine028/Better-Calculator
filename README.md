@@ -1,4 +1,4 @@
-    updated: Sunday, 27th December 2020
+    updated: Monday, 28th December 2020
 
 <div align="center">
   <a href="https://github.com/warmachine028/Better-Calculator">
@@ -8,7 +8,7 @@
     A better and refined alternative
   </p>
   <a href="https://github.com/warmachine028/Better-Calculator">
-    <img src="https://img.shields.io/badge/version-V2.0-cyan" alt="Current Ver: V1.3">
+    <img src="https://img.shields.io/badge/version-V2.1-cyan" alt="Current Ver: V2.1">
   </a>
 
 </div>
@@ -43,7 +43,7 @@
 
 - Old versions archived in ['/versions'](https://github.com/warmachine028/Better-Calculator/tree/main/versions) folder
 
-- Download the Latest version: [Better Calculator.py V2.0](https://github.com/warmachine028/Better-Calculator/blob/main/Better%20Calculator.py)
+- Download the Latest version: [Better Calculator.py V2.1](https://github.com/warmachine028/Better-Calculator/blob/main/Better%20Calculator.py)
 
 - View [CHANGELOG](.github/CHANGELOG.md)
 
