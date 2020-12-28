@@ -1,14 +1,14 @@
 """
-CHANGE LOG: Ver : 2.0
->> 27th December 2020
->> Optimised backend
->> Reduced Code
->> Fixed bugs
+CHANGE LOG: Ver : 2.1
+>> 28th December 2020
+>> Optimised Code
+>> Fixed Radio Buttons
 """
 
 from tkinter import *
 from PIL import Image, ImageTk
 import math
+
 # Special Colors
 
 sci_bg, sci_fg = 'grey', 'white'
@@ -30,7 +30,6 @@ b_border_width = 0
 # Boolean Variables
 aot_toggle = False
 
-
 # Button lists
 widget_list0 = list()  # For buttons having usual 'fg_color' foreground
 widget_list1 = list()  # For buttons having exclusive 'cyan' foreground
@@ -44,14 +43,14 @@ radio_list = list()    # For exclusive radio buttons <Themes>
 def aot():
     """To Keep window always on top"""
     global aot_toggle
-
+    
     # To Toggle On
     if not aot_toggle:
         root.attributes('-topmost', True)
         label['fg'] = aot_color
         label['font'] = 'Verdana 12 italic'
         aot_toggle = True
-
+    
     # To Toggle Off
     else:
         root.attributes('-topmost', False)
@@ -64,7 +63,7 @@ def aot():
 def change_theme():
     """Function Changes Theme from radio button input"""
     global bg_color, fg_color, sci_bg, hover, inv_color, hover_inverse, aot_color
-
+    
     # For Light Theme
     if _variable.get() == "Light Theme":
         # Theme Colors
@@ -73,39 +72,39 @@ def change_theme():
         hover, hover_inverse = 'grey', dark_blue
         inv_color = blue
         aot_color = 'red'
-
+        
         root.configure(bg=bg_color)
         label0.configure(bg=bg_color, fg=fg_color, activebackground=bg_color)
-
+        
         label.configure(bg=bg_color, fg=aot_color) if aot_toggle else label.configure(bg=bg_color, fg=fg_color)
-
+        
         sci_upper_frame.configure(bg=sci_bg)
         main_frame.configure(bg=bg_color)
         screen_frame.configure(bg=bg_color)
-
+        
         screen.configure(bg=bg_color, fg=fg_color, insertbackground=fg_color)
-
+        
         mid_button.configure(bg=bg_color, fg=fg_color, activebackground=bg_color, activeforeground=fg_color)
-
+        
         [widget.configure(bg=dark_grey) for widget in inverted_list]
-
+        
         [widget.configure(bg=dark_grey) for widget in sci_list]
-
+        
         [widget.configure(bg=dark_grey) for widget in sci_list2]
-
+        
         inverse_button.configure(bg=inv_color) if inv_toggle else inverse_button.configure(bg=sci_bg)
-
+        
         for radiobutton in radio_list:
             radiobutton.configure(bg=bg_color, fg=fg_color, activebackground=bg_color, selectcolor="cyan")
-
+        
         for widget in widget_list0:
             widget.configure(bg=bg_color, fg=fg_color, activebackground=fg_color, activeforeground=bg_color, )
-
+        
         for widget in widget_list1:
             widget.configure(bg=bg_color, fg="red", activebackground='red', activeforeground=bg_color, )
-
+        
         all_clear.configure(bg=bg_color, fg=fg_color, activebackground=fg_color, activeforeground=bg_color, )
-
+    
     # For Dark Theme
     elif _variable.get() == "Dark Theme":
         # Theme Colors
@@ -114,37 +113,37 @@ def change_theme():
         hover, hover_inverse = dark_grey, dark_mint
         inv_color = mint
         aot_color = 'cyan'
-
+        
         root.configure(bg=bg_color)
         label0.configure(bg=bg_color, fg=fg_color, activebackground=bg_color)
-
+        
         label.configure(bg=bg_color, fg=aot_color) if aot_toggle else label.configure(bg=bg_color, fg=fg_color)
-
+        
         sci_upper_frame.configure(bg=sci_bg)
         main_frame.configure(bg=bg_color)
         screen_frame.configure(bg=bg_color)
-
+        
         screen.configure(bg=bg_color, fg=fg_color, insertbackground=fg_color)
-
+        
         mid_button.configure(bg=bg_color, fg=fg_color, activebackground=bg_color, activeforeground=fg_color)
-
+        
         [widget.configure(bg=sci_bg) for widget in inverted_list]
-
+        
         [widget.configure(bg=sci_bg) for widget in sci_list]
-
+        
         [widget.configure(bg=sci_bg) for widget in sci_list2]
-
+        
         inverse_button.configure(bg=inv_color) if inv_toggle else inverse_button.configure(bg=sci_bg)
-
+        
         for radiobutton in radio_list:
             radiobutton.configure(bg=bg_color, fg=fg_color, activebackground=bg_color, selectcolor="red")
-
+        
         for widget in widget_list0:
             widget.configure(bg=bg_color, fg=fg_color, activebackground=fg_color, activeforeground=bg_color, )
-
+        
         for widget in widget_list1:
             widget.configure(bg=bg_color, fg="cyan", activebackground='cyan', activeforeground=bg_color)
-
+        
         all_clear.configure(bg=bg_color, fg=fg_color, activebackground=fg_color, activeforeground=bg_color)
 
 
@@ -210,7 +209,7 @@ def click(event):
             screen.delete(0, END)
             screen.insert(0, 'No Input')
         return
-
+    
     elif btn_text == "<-":
         expression = screen.get()
         expression = expression[0: len(expression) - 1]
@@ -224,16 +223,11 @@ def click(event):
 # Function Replaces visual elements with functioning elements adds and removes redundant parenthesis
 def replace_(expression):
     """Function Replaces visual elements with functioning elements ,adds and removes redundant parenthesis."""
-    expression = expression.replace('x', '*')
-    expression = expression.replace('÷', '/')
-    expression = expression.replace('^', "**")
-    expression = expression.replace('π', str(math.pi))
-    expression = expression.replace('e', str(math.e))
-    expression = expression.replace('sin⁻¹(', "asin(")
-    expression = expression.replace('cos⁻¹(', "acos(")
-    expression = expression.replace('tan⁻¹(', "atan(")
-    expression = expression.replace('!', 'factorial(')
-    expression = expression.replace("√", "square_root(")
+    original = ['x', '÷', '^', 'π', 'e', 'sin⁻¹(', 'cos⁻¹(', 'tan⁻¹(', '!', "√"]
+    replaced = ['*', '/', '**', str(math.pi), str(math.e), 'asin(', 'acos(', 'atan(', 'factorial(', "square_root("]
+    for original_, replaced_ in zip(original, replaced):
+        new_text = expression.replace(original_, replaced_)
+        expression = new_text
     
     # Adding required parenthesis
     if expression.count('(') > expression.count(')'):
@@ -249,23 +243,22 @@ def replace_(expression):
 
 # The Actual GUI - Front_End
 
-root = Tk()                             # Main window
-root.geometry("267x500")                # Geometry
+root = Tk()  # Main window
+root.geometry("267x500")  # Geometry
 
-root.configure(bg=bg_color)             # Background of window
-root.wm_iconbitmap("Cal_icon.ico")      # Icon of window
+root.configure(bg=bg_color)  # Background of window
+root.wm_iconbitmap("Cal_icon.ico")  # Icon of window
 
-root.title("Calculator")                # Title Bar Name
-root.resizable(height=0, width=0)       # Non Resizable window
+root.title("Calculator")  # Title Bar Name
+root.resizable(height=0, width=0)  # Non Resizable window
 
 # Frames
-main_frame = Frame(root, borderwidth=0, bg=bg_color)    # First frame in Root window - Main_frame
+main_frame = Frame(root, borderwidth=0, bg=bg_color)  # First frame in Root window - Main_frame
 screen_frame = Frame(root, borderwidth=0, bg=bg_color)  # Second frame in Root window - Screen_frame
-Mid_frame = Frame(root, borderwidth=0, bg=bg_color)     # Third frame in Root window - Mid_frame
-
+Mid_frame = Frame(root, borderwidth=0, bg=bg_color)  # Third frame in Root window - Mid_frame
 
 # Photo Header
-image = Image.open("Calculator.png")                                 # Opening the Image
+image = Image.open("Calculator.png")  # Opening the Image
 photo = ImageTk.PhotoImage(image.resize((45, 45), Image.ANTIALIAS))  # Resizing the Image
 label0 = Button(main_frame, image=photo, bg=bg_color,
                 activebackground=bg_color, justify=CENTER, bd=0, command=aot)
@@ -281,9 +274,9 @@ Themes = ["Dark Theme", "Light Theme"]
 
 for column_number, theme in enumerate(Themes):
     r = Radiobutton(main_frame, text=f"{theme}", variable=_variable, value=theme,
-                    bg=bg_color, fg="red", cursor="hand2", selectcolor="red",
+                    bg=bg_color, fg="white", cursor="hand2", selectcolor="red",
                     disabledforeground="red", indicatoron=True,
-                    activeforeground="red", activebackground=bg_color,
+                    activeforeground=fg_color, activebackground=bg_color,
                     command=change_theme)
     r.grid(row=2, column=column_number)
     radio_list.append(r)
@@ -356,39 +349,33 @@ floor_division.grid(row=0, column=1)
 all_clear.grid(row=0, column=0)
 
 # Binding all Buttons to necessary functions
-for button in (widget_list0+widget_list1):
+for button in (widget_list0 + widget_list1):
     button.bind('<Enter>', change_on_hovering)
     button.bind('<Leave>', return_on_hovering)
     button.bind('<Button-1>', click)
 
-
 all_clear.bind('<Enter>', change_on_hovering)
 all_clear.bind('<Leave>', return_on_hovering)
-
 
 # Binding more Button
 screen.bind("<Return>", enter_click)
 all_clear.bind('<Enter>', change_on_hovering)
 all_clear.bind('<Leave>', return_on_hovering)
 
-
 # Packing the labels
 label0.grid(row=0, column=0, columnspan=1)
 label.grid(row=0, column=1, columnspan=2)
-
 
 # Packing the frames
 
 main_frame.pack(padx=0, pady=0)
 screen_frame.pack(padx=0, pady=0)
 
-
 ##################################################################################################################
 
 # Scientific Properties
 sci_font = "ariel 15"
 sci_width = 4
-
 
 # Boolean Variables
 sci_toggle = False
@@ -399,6 +386,7 @@ sci_list = list()
 sci_list2 = list()
 inverted_list = list()
 
+
 # some Scientific Functions - Deep Back End
 
 
@@ -406,7 +394,7 @@ inverted_list = list()
 def sci_cal():
     """Function to toggle the Scientific Calculator"""
     global sci_toggle
-
+    
     # To Toggle On
     if not sci_toggle:
         mid_button.pack_forget()
@@ -418,7 +406,7 @@ def sci_cal():
         mid_button.pack()
         Mid_frame.pack()
         sci_toggle = True
-
+    
     # To Toggle Off
     elif sci_toggle:
         sci_frame.pack_forget()
@@ -522,7 +510,7 @@ def calculate_sc(event):
 def inv():
     """Function to toggle Inverse"""
     global inv_toggle
-
+    
     # To Toggle On
     if not inv_toggle:
         sci_upper_frame.pack_forget()
@@ -531,12 +519,12 @@ def inv():
         sci_upper_frame2.pack()
         sci_lower_frame.pack()
         inv_toggle = True
-
+    
     # To Toggle Off
     elif inv_toggle:
         sci_upper_frame2.pack_forget()
         sci_lower_frame.pack_forget()
-
+        
         sci_upper_frame.pack()
         sci_lower_frame.pack()
         inv_toggle = False
@@ -588,7 +576,7 @@ sci_upper_frame.pack()
 sci_lower_frame.pack()
 mid_button = Button(root, height=1, width=1,
                     font=sci_font, cursor="hand2", activebackground=bg_color, activeforeground=fg_color,
-                    text='=', bd=0, bg=bg_color, fg=fg_color, command=sci_cal)
+                    text='=', bd=0, bg=bg_color, command=sci_cal, fg=fg_color)
 
 # Advanced Common Scientific Buttons
 button_list = ['sin', 'cos', 'tan', 'log', 'ln']
@@ -607,7 +595,7 @@ for row_number in range(2):
         o = Button(sci_lower_frame, text=f'{button_list2[i]}',
                    font=sci_font, width=sci_width,
                    bg=sci_bg, bd=1, fg=sci_fg, activebackground=sci_bg, activeforeground=sci_fg)
-        o.grid(row=row_number, column=column_number,)
+        o.grid(row=row_number, column=column_number, )
         sci_list2.append(o)
         i += 1
 
@@ -634,7 +622,7 @@ for button in inverted_list:
     button.bind('<Leave>', return_on_hovering)
     button.bind('<Button-1>', calculate_sc_inv)
 
-for button in (sci_list+sci_list2):
+for button in (sci_list + sci_list2):
     button.bind('<Enter>', change_on_hovering)
     button.bind('<Leave>', return_on_hovering)
     button.bind('<Button-1>', calculate_sc)
@@ -644,6 +632,5 @@ inverse_button.bind('<Leave>', return_on_hovering)
 
 mid_button.pack()
 Mid_frame.pack(padx=10, pady=0)
-
 
 root.mainloop()
