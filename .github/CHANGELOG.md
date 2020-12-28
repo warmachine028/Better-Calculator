@@ -1,6 +1,13 @@
 # CHANGELOG
 
-    Updated on: 27th December 2020
+    Updated on: 28th December 2020
+
+## [V2.1]
+
+### _28th December 2020_
+
+- Optimised Code
+- Fixed Radio Buttons
 
 ## [V2.0]
 
@@ -9,6 +16,9 @@
 - Optimised backend
 - Reduced Code
 - Fixed bugs
+
+- Known Bugs:
+  - Radio buttons initially not chosen (Theme button)
 
 ## [V1.4]
 
