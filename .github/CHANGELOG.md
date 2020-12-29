@@ -1,6 +1,13 @@
 # CHANGELOG
 
-    Updated on: 28th December 2020
+    Updated on: 29th December 2020
+
+## [V2.2]
+
+### _29th December 2020_
+
+- Fixed Active-foreground color Glitch 
+- over the Theme Radio Toggle Switches in Light theme
 
 ## [V2.1]
 
