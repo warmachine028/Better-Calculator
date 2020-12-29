@@ -6,8 +6,14 @@
 
 ### _29th December 2020_
 
-- Fixed Active-foreground color Glitch 
+- Fixed Active-foreground color Glitch
 - over the Theme Radio Toggle Switches in Light theme
+- Changed Multiplication Button from 'x' to "×"
+- Changed Clear Button from "<-" to "⇐"
+
+- Known Bugs:
+  - Multiplication function not working.
+  - Console filling with redundant texts 'frame...'
 
 ## [V2.1]
 
