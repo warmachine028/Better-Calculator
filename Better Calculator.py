@@ -1,27 +1,43 @@
 """
-CHANGE LOG: Ver : 2.2
->> 29th December 2020
->> Fixed Active-foreground color Glitch 
-   over the Theme Radio Toggle Switches in Light theme
->> Changed Multiplication Button from 'x' to "×"
->> Changed Clear Button from "<-" to "⇐"
-
+CHANGE LOG: Ver : 3.0
+>> 30th December 2020
+>> Shortened the backend code 
+>> Created new 'Colour Attributes.json' file for more 
+   flexibility in theme customization in future updates
+>> Fixed Multiplication Button
+>> Fixed foul Messages in terminal
+>> Known issues:
+    - App stops taking input randomly
 """
 
+import json
+import math
 from tkinter import *
 from PIL import Image, ImageTk
-import math
 
 # Special Colors
-
-sci_bg, sci_fg = "grey", "white"
-bg_color, fg_color = "black", "white"
-dark_grey = "#3B3E3F"
 mint, dark_mint = "#15CA9C", "#177351"
 blue, dark_blue = "#32CAC9", "#299493"
-hover, hover_inverse = "#3B3E3F", dark_mint
-inv_color = mint
-aot_color = "cyan"
+dark_grey = "#3B3E3F"
+
+# Parsing Colours
+with open("Colour Attributes.json", "r") as f:
+    content = json.load(f)
+
+# Default Primary Values
+Default = content["Theme 1"]
+theme_name = Default["Theme Name"]
+bg_color = Default["Background Color"]
+fg_color = Default["Foreground Color"]
+aot_color = Default["AOT active Text Color"]
+hover = Default["Hover Color"]
+radio_color = Default["Radio Switch Color"]
+
+sci_bg = Default["Scientific Colors"]["Background Color"]
+sci_fg = Default["Scientific Colors"]["Foreground Color"]
+inv_color = Default["Scientific Colors"]["|INV| Color"]
+sci_hover = Default["Scientific Colors"]["Hover Color"]
+sci_hover_inverse = Default["Scientific Colors"]["Hover Color |INV|"]
 
 # Common Properties
 b_font = "ariel 25 bold"
@@ -65,148 +81,103 @@ def aot():
 # Function Changes theme from radio button input
 def change_theme():
     """Function Changes Theme from radio button input"""
-    global bg_color, fg_color, sci_bg, hover, inv_color, hover_inverse, aot_color
+    global bg_color, fg_color, aot_color, hover, radio_color
+    global sci_bg, sci_fg, inv_color, sci_hover, sci_hover_inverse
 
     # For Light Theme
-    if _variable.get() == "Aurora Light":
+    if _variable.get() == content["Theme 2"]["Theme Name"]:
         # Theme Colors
-        sci_bg = dark_grey
-        bg_color, fg_color = "white", "black"
-        hover, hover_inverse = "grey", dark_blue
-        inv_color = blue
-        aot_color = "red"
+        _theme = content["Theme 2"]
+        bg_color = _theme["Background Color"]
+        fg_color = _theme["Foreground Color"]
+        aot_color = _theme["AOT active Text Color"]
+        hover = _theme["Hover Color"]
+        radio_color = _theme["Radio Switch Color"]
 
-        root.configure(bg=bg_color)
-        label0.configure(bg=bg_color, fg=fg_color, activebackground=bg_color)
-
-        label.configure(bg=bg_color, fg=aot_color) if aot_toggle else label.configure(
-            bg=bg_color, fg=fg_color
-        )
-
-        sci_upper_frame.configure(bg=sci_bg)
-        main_frame.configure(bg=bg_color)
-        screen_frame.configure(bg=bg_color)
-
-        screen.configure(bg=bg_color, fg=fg_color, insertbackground=fg_color)
-
-        mid_button.configure(
-            bg=bg_color,
-            fg=fg_color,
-            activebackground=bg_color,
-            activeforeground=fg_color,
-        )
-
-        [widget.configure(bg=dark_grey) for widget in inverted_list]
-
-        [widget.configure(bg=dark_grey) for widget in sci_list]
-
-        [widget.configure(bg=dark_grey) for widget in sci_list2]
-
-        inverse_button.configure(
-            bg=inv_color
-        ) if inv_toggle else inverse_button.configure(bg=sci_bg)
-
-        for radiobutton in radio_list:
-            radiobutton.configure(
-                bg=bg_color,
-                fg=fg_color,
-                activebackground=bg_color,
-                activeforeground=fg_color,
-                selectcolor="cyan",
-            )
-
-        for widget in widget_list0:
-            widget.configure(
-                bg=bg_color,
-                fg=fg_color,
-                activebackground=fg_color,
-                activeforeground=bg_color,
-            )
-
-        for widget in widget_list1:
-            widget.configure(
-                bg=bg_color,
-                fg="red",
-                activebackground="red",
-                activeforeground=bg_color,
-            )
-
-        all_clear.configure(
-            bg=bg_color,
-            fg=fg_color,
-            activebackground=fg_color,
-            activeforeground=bg_color,
-        )
+        sci_bg = _theme["Scientific Colors"]["Background Color"]
+        sci_fg = _theme["Scientific Colors"]["Foreground Color"]
+        inv_color = _theme["Scientific Colors"]["|INV| Color"]
+        sci_hover = _theme["Scientific Colors"]["Hover Color"]
+        sci_hover_inverse = _theme["Scientific Colors"]["Hover Color |INV|"]
+        change()
 
     # For Dark Theme
-    elif _variable.get() == "Super Dark":
+    elif _variable.get() == content["Theme 1"]["Theme Name"]:
         # Theme Colors
-        sci_bg = "grey"
-        bg_color, fg_color = "black", "white"
-        hover, hover_inverse = dark_grey, dark_mint
-        inv_color = mint
-        aot_color = "cyan"
+        _theme = content["Theme 1"]
+        bg_color = _theme["Background Color"]
+        fg_color = _theme["Foreground Color"]
+        aot_color = _theme["AOT active Text Color"]
+        hover = _theme["Hover Color"]
+        radio_color = _theme["Radio Switch Color"]
 
-        root.configure(bg=bg_color)
-        label0.configure(bg=bg_color, fg=fg_color, activebackground=bg_color)
+        sci_bg = _theme["Scientific Colors"]["Background Color"]
+        sci_fg = _theme["Scientific Colors"]["Foreground Color"]
+        inv_color = _theme["Scientific Colors"]["|INV| Color"]
+        sci_hover = _theme["Scientific Colors"]["Hover Color"]
+        sci_hover_inverse = _theme["Scientific Colors"]["Hover Color |INV|"]
+        change()
 
-        label.configure(bg=bg_color, fg=aot_color) if aot_toggle else label.configure(
-            bg=bg_color, fg=fg_color
-        )
 
-        sci_upper_frame.configure(bg=sci_bg)
-        main_frame.configure(bg=bg_color)
-        screen_frame.configure(bg=bg_color)
+# Function to set the changed them variables
+def change():
+    root.configure(bg=bg_color)
+    label0.configure(bg=bg_color, fg=fg_color, activebackground=bg_color)
 
-        screen.configure(bg=bg_color, fg=fg_color, insertbackground=fg_color)
+    label.configure(bg=bg_color, fg=aot_color) if aot_toggle else label.configure(
+        bg=bg_color, fg=fg_color
+    )
 
-        mid_button.configure(
+    sci_upper_frame.configure(bg=sci_bg)
+    main_frame.configure(bg=bg_color)
+    screen_frame.configure(bg=bg_color)
+
+    screen.configure(bg=bg_color, fg=fg_color, insertbackground=fg_color)
+
+    mid_button.configure(
+        bg=bg_color,
+        fg=fg_color,
+        activebackground=bg_color,
+        activeforeground=fg_color,
+    )
+
+    [widget.configure(bg=sci_bg) for widget in sci_list + sci_list2 + inverted_list]
+
+    inverse_button.configure(
+        bg=inv_color
+    ) if inv_toggle else inverse_button.configure(bg=sci_bg)
+
+    for radiobutton in radio_list:
+        radiobutton.configure(
             bg=bg_color,
             fg=fg_color,
             activebackground=bg_color,
             activeforeground=fg_color,
+            selectcolor=radio_color,
         )
 
-        [widget.configure(bg=sci_bg) for widget in inverted_list]
-
-        [widget.configure(bg=sci_bg) for widget in sci_list]
-
-        [widget.configure(bg=sci_bg) for widget in sci_list2]
-
-        inverse_button.configure(
-            bg=inv_color
-        ) if inv_toggle else inverse_button.configure(bg=sci_bg)
-
-        for radiobutton in radio_list:
-            radiobutton.configure(
-                bg=bg_color,
-                fg=fg_color,
-                activebackground=bg_color,
-                activeforeground=fg_color,
-                selectcolor="red",
-            )
-        for widget in widget_list0:
-            widget.configure(
-                bg=bg_color,
-                fg=fg_color,
-                activebackground=fg_color,
-                activeforeground=bg_color,
-            )
-
-        for widget in widget_list1:
-            widget.configure(
-                bg=bg_color,
-                fg="cyan",
-                activebackground="cyan",
-                activeforeground=bg_color,
-            )
-
-        all_clear.configure(
+    for widget in widget_list0:
+        widget.configure(
             bg=bg_color,
             fg=fg_color,
             activebackground=fg_color,
             activeforeground=bg_color,
         )
+
+    for widget in widget_list1:
+        widget.configure(
+            bg=bg_color,
+            fg=aot_color,
+            activebackground=aot_color,
+            activeforeground=bg_color,
+        )
+
+    all_clear.configure(
+        bg=bg_color,
+        fg=fg_color,
+        activebackground=fg_color,
+        activeforeground=bg_color,
+    )
 
 
 # Function changes color of widgets hovering
@@ -214,17 +185,16 @@ def change_on_hovering(event):
     """Function changes color of widgets hovering"""
     widget = event.widget
     parent = event.widget.winfo_parent()
-    print(parent)
-    if parent in [".!frame4.!frame", ".!frame4.!frame2", ".!frame4.!frame3"]:
+    if parent in [".!frame4.!frame", ".!frame4.!frame3"]:
         if widget["text"] == "INV":
-            widget.configure(bg=hover_inverse) if inv_toggle else widget.configure(
-                bg=hover
+            widget.configure(bg=sci_hover_inverse) if inv_toggle else widget.configure(
+                bg=sci_hover
             )
             return
         else:
-            widget.configure(bg=hover)
+            widget.configure(bg=sci_hover)
         return
-    widget["bg"] = "grey"
+    widget["bg"] = hover
 
 
 # Function returns to normal color when not hovering
@@ -278,10 +248,11 @@ def click(event):
 
     elif btn_text == "⇐":
         expression = screen.get()
-        expression = expression[0 : len(expression) - 1]
+        expression = expression[0: len(expression) - 1]
         screen.delete(0, END)
         screen.insert(0, expression)
         return
+
     else:
         screen.insert(END, btn_text)
 
@@ -289,19 +260,16 @@ def click(event):
 # Function Replaces visual elements with functioning elements adds and removes redundant parenthesis
 def replace_(expression):
     """Function Replaces visual elements with functioning elements ,adds and removes redundant parenthesis."""
-    original = ["x", "÷", "^", "π", "e", "sin⁻¹(", "cos⁻¹(", "tan⁻¹(", "!", "√"]
-    replaced = [
-        "*",
-        "/",
-        "**",
-        str(math.pi),
-        str(math.e),
-        "asin(",
-        "acos(",
-        "atan(",
-        "factorial(",
-        "square_root(",
-    ]
+    original = ["×", "÷", "^", "π", "e", "sin⁻¹(", "cos⁻¹(", "tan⁻¹(", "!", "√"]
+    replaced = ["*", "/", "**",
+                str(math.pi),
+                str(math.e),
+                "asin(",
+                "acos(",
+                "atan(",
+                "factorial(",
+                "square_root(",
+                ]
     for original_, replaced_ in zip(original, replaced):
         new_text = expression.replace(original_, replaced_)
         expression = new_text
@@ -367,9 +335,11 @@ label = Label(
 
 # Radio Buttons for selecting theme
 _variable = StringVar()
-_variable.set("Super Dark")
 
-Themes = ["Super Dark", "Aurora Light"]
+_variable.set(theme_name)
+
+Themes = [content["Theme 1"]["Theme Name"],
+          content["Theme 2"]["Theme Name"]]
 
 for column_number, theme in enumerate(Themes):
     r = Radiobutton(
@@ -460,8 +430,8 @@ for row_number, button_text in enumerate(column_buttons):
         borderwidth=b_border_width,
         font=b_font,
         bg=bg_color,
-        fg="cyan",
-        activebackground="cyan",
+        fg=aot_color,
+        activebackground=aot_color,
         activeforeground=bg_color,
         relief=b_relief,
         width=b_width,
@@ -478,8 +448,8 @@ equal_button = Button(
     borderwidth=b_border_width,
     font=b_font,
     bg=bg_color,
-    fg="cyan",
-    activebackground="cyan",
+    fg=aot_color,
+    activebackground=aot_color,
     activeforeground=bg_color,
     relief=b_relief,
     width=b_width,
