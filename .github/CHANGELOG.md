@@ -1,6 +1,20 @@
 # CHANGELOG
 
-    Updated on: 29th December 2020
+    Updated on: 30th December 2020
+
+## [V3.0]
+
+### _30th December 2020_
+
+- Shortened the backend code
+- Created new 'Colour_Attributes.json' file for more
+   flexibility in theme customization in future updates
+- Fixed Multiplication Button
+- Fixed redundant texts in terminal/console
+
+- Known Bugs:
+  - App stops taking input randomly
+
 
 ## [V2.2]
 
