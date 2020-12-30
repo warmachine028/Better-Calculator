@@ -2,7 +2,7 @@
 CHANGE LOG: Ver : 3.0
 >> 30th December 2020
 >> Shortened the backend code 
->> Created new 'Colour Attributes.json' file for more 
+>> Created new 'Colour_Attributes.json' file for more 
    flexibility in theme customization in future updates
 >> Fixed Multiplication Button
 >> Fixed foul Messages in terminal
@@ -21,7 +21,7 @@ blue, dark_blue = "#32CAC9", "#299493"
 dark_grey = "#3B3E3F"
 
 # Parsing Colours
-with open("Colour Attributes.json", "r") as f:
+with open("Colour_Attributes.json") as f:
     content = json.load(f)
 
 # Default Primary Values

@@ -1,4 +1,4 @@
-    updated: Tuesday, 29th December 2020
+    updated: Wednesday, 30th December 2020
 
 <div align="center">
   <a href="https://github.com/warmachine028/Better-Calculator">
@@ -8,7 +8,7 @@
     A better and refined alternative
   </p>
   <a href="https://github.com/warmachine028/Better-Calculator">
-    <img src="https://img.shields.io/badge/version-V2.2-cyan" alt="Current Ver: V2.2">
+    <img src="https://img.shields.io/badge/version-V3.0-lawngreen" alt="Current Ver: V3.0">
   </a>
 
 </div>
@@ -33,7 +33,7 @@
 
 - This is my first Project in github.
 
-- It's a wonderful calculator which has better features than the conventional ones.
+- It's a wonderful calculator which is fully feature packed.
 
 - This is a completely new concept.
 
@@ -41,34 +41,33 @@
 
 - Please find issues and suggest changes.
 
-- Old versions archived in ['/versions'](https://github.com/warmachine028/Better-Calculator/tree/main/versions) folder
-
-- Download the Latest version: [Better Calculator.py V2.2](https://github.com/warmachine028/Better-Calculator/blob/main/Better%20Calculator.py)
-
-- View [CHANGELOG](.github/CHANGELOG.md)
-
 ---
 
 ## Getting Started
 
 > ### 1. Requirements
 >
-> 1. [python 3.x](https://www.python.org/ftp/python/3.9.1/python-3.9.1-amd64.exe)
+> 1. [python 3.x](https://cutt.ly/PjeYrSt)
 > 2. [7zip](https://www.7-zip.org/a/7z1900-x64.exe)
 > 3. Pillow Module. If not installed use command `pip install pillow` in terminal
 >
 > ### 2. Downloading
 >
-> i. Press `Code` button :
-> ![Code Button](Images/code.png)
+> 1. Press `Code` button :
+>    ![Code Button](Images/code.png)
 >
-> ii. Then click on `Download ZIP` :
-> ![ZIP](Images/zip.png)
+> 2. Then click on `Download ZIP` :
+>    ![ZIP](Images/zip.png)
 >
 > ### 3. Extracting
 >
 > Then extract the file in a new folder using :
-> [7zip](https://www.7-zip.org/a/7z1900-x64.exe) or [winrar](https://www.win-rar.com/predownload.html?&L=0)
+>
+> 1. [7zip](https://www.7-zip.org/a/7z1900-x64.exe)
+>    or
+> 2. [winrar](https://www.win-rar.com/predownload.html?&L=0)
+
+---
 
 ## Usage
 
@@ -76,6 +75,14 @@
 >    ![Open](Images/open.png)
 > 2. Then you can see this window:
 >    ![calculator](Images/calculator.png)
+> 3. Old versions archived in ['/versions'](versions) folder:
+>    ![versions](Images/versions.png)
+>
+> 4. Always download the Latest version : [Better Calculator.py V2.2](Better%20Calculator.py)
+>
+> 5. Now you can Change colour attributes to match your theme in the calculator itself [Colour Attributes](Colour_Attributes.json) from this current version i.e V3.0
+>
+> 6. View [CHANGELOG](.github/CHANGELOG.md) for detailed updates and issues.
 
 ---
 
