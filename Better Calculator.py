@@ -1,13 +1,13 @@
 """
-CHANGE LOG: Ver : 3.0
->> 30th December 2020
->> Shortened the backend code 
->> Created new 'Colour_Attributes.json' file for more 
-   flexibility in theme customization in future updates
->> Fixed Multiplication Button
->> Fixed foul Messages in terminal
->> Known issues:
-    - App stops taking input randomly
+CHANGE LOG: Ver : 3.1
+>> 31st December 2020
+>> Shortened Code by using DRY methodology
+>> Removed unnecessary Special Colours
+>> Added individual screen colours in "Colour_attributes"
+>> Added a change() function to handle theme changes 
+>> Fixed !frame4.!frame2 not showing hover colours
+>> Fixed App crashes and inturrupts in inputs randomly
+
 """
 
 import json
@@ -15,16 +15,12 @@ import math
 from tkinter import *
 from PIL import Image, ImageTk
 
-# Special Colors
-mint, dark_mint = "#15CA9C", "#177351"
-blue, dark_blue = "#32CAC9", "#299493"
-dark_grey = "#3B3E3F"
-
 # Parsing Colours
-with open("Colour_Attributes.json") as f:
+with open("Colour Attributes.json", "r") as f:
     content = json.load(f)
 
 # Default Primary Values
+"Normal Frame Colors"
 Default = content["Theme 1"]
 theme_name = Default["Theme Name"]
 bg_color = Default["Background Color"]
@@ -33,6 +29,14 @@ aot_color = Default["AOT active Text Color"]
 hover = Default["Hover Color"]
 radio_color = Default["Radio Switch Color"]
 
+"Screen Colors"
+scrn_bg = Default["Input Screen Color"]["Background Color"]
+scrn_fg = Default["Input Screen Color"]["Foreground Color"]
+scrn_sb = Default["Input Screen Color"]["Select Background"]
+scrn_sf = Default["Input Screen Color"]["Select Foreground"]
+scrn_cur = Default["Input Screen Color"]["Cursor Color"]
+
+"Scientific Frame Colors"
 sci_bg = Default["Scientific Colors"]["Background Color"]
 sci_fg = Default["Scientific Colors"]["Foreground Color"]
 inv_color = Default["Scientific Colors"]["|INV| Color"]
@@ -56,8 +60,6 @@ radio_list = list()  # For exclusive radio buttons <Themes>
 
 
 # some Functions - Front_end
-
-
 # To Keep window always on top
 def aot():
     """To Keep window always on top"""
@@ -78,10 +80,11 @@ def aot():
         aot_toggle = False
 
 
-# Function Changes theme from radio button input
+# Function Changes theme colors radio button input
 def change_theme():
     """Function Changes Theme from radio button input"""
     global bg_color, fg_color, aot_color, hover, radio_color
+    global scrn_bg, scrn_fg, scrn_sb, scrn_sf, scrn_cur
     global sci_bg, sci_fg, inv_color, sci_hover, sci_hover_inverse
 
     # For Light Theme
@@ -93,6 +96,12 @@ def change_theme():
         aot_color = _theme["AOT active Text Color"]
         hover = _theme["Hover Color"]
         radio_color = _theme["Radio Switch Color"]
+
+        scrn_bg = _theme["Input Screen Color"]["Background Color"]
+        scrn_fg = _theme["Input Screen Color"]["Foreground Color"]
+        scrn_sb = _theme["Input Screen Color"]["Select Background"]
+        scrn_sf = _theme["Input Screen Color"]["Select Foreground"]
+        scrn_cur = _theme["Input Screen Color"]["Cursor Color"]
 
         sci_bg = _theme["Scientific Colors"]["Background Color"]
         sci_fg = _theme["Scientific Colors"]["Foreground Color"]
@@ -111,6 +120,12 @@ def change_theme():
         hover = _theme["Hover Color"]
         radio_color = _theme["Radio Switch Color"]
 
+        scrn_bg = _theme["Input Screen Color"]["Background Color"]
+        scrn_fg = _theme["Input Screen Color"]["Foreground Color"]
+        scrn_sb = _theme["Input Screen Color"]["Select Background"]
+        scrn_sf = _theme["Input Screen Color"]["Select Foreground"]
+        scrn_cur = _theme["Input Screen Color"]["Cursor Color"]
+
         sci_bg = _theme["Scientific Colors"]["Background Color"]
         sci_fg = _theme["Scientific Colors"]["Foreground Color"]
         inv_color = _theme["Scientific Colors"]["|INV| Color"]
@@ -119,7 +134,7 @@ def change_theme():
         change()
 
 
-# Function to set the changed them variables
+# Function to set the changed colors to the application
 def change():
     root.configure(bg=bg_color)
     label0.configure(bg=bg_color, fg=fg_color, activebackground=bg_color)
@@ -131,12 +146,13 @@ def change():
     sci_upper_frame.configure(bg=sci_bg)
     main_frame.configure(bg=bg_color)
     screen_frame.configure(bg=bg_color)
-
-    screen.configure(bg=bg_color, fg=fg_color, insertbackground=fg_color)
+    screen.configure(bg=scrn_bg, fg=scrn_fg,
+                     selectbackground=scrn_sb,
+                     selectforeground=scrn_fg,
+                     insertbackground=scrn_cur)
 
     mid_button.configure(
-        bg=bg_color,
-        fg=fg_color,
+        bg=bg_color, fg=fg_color,
         activebackground=bg_color,
         activeforeground=fg_color,
     )
@@ -185,11 +201,10 @@ def change_on_hovering(event):
     """Function changes color of widgets hovering"""
     widget = event.widget
     parent = event.widget.winfo_parent()
-    if parent in [".!frame4.!frame", ".!frame4.!frame3"]:
+    if parent in [".!frame4.!frame", ".!frame4.!frame2", ".!frame4.!frame3"]:
         if widget["text"] == "INV":
             widget.configure(bg=sci_hover_inverse) if inv_toggle else widget.configure(
-                bg=sci_hover
-            )
+                bg=sci_hover)
             return
         else:
             widget.configure(bg=sci_hover)
@@ -215,7 +230,6 @@ def return_on_hovering(event):
 
 
 # some Functions - Back_end
-
 # Function to execute Return Key in Screen (Entry Widget)
 def enter_click(event):
     """Function to execute Return Key in Screen (Entry Widget)"""
@@ -287,41 +301,23 @@ def replace_(expression):
 
 
 # The Actual GUI - Front_End
+root = Tk()
+root.geometry("267x500")
 
-root = Tk()  # Main window
-root.geometry("267x500")  # Geometry
+root.configure(bg=bg_color)
+root.wm_iconbitmap("Cal_icon.ico")
 
-root.configure(bg=bg_color)  # Background of window
-root.wm_iconbitmap("Cal_icon.ico")  # Icon of window
-
-root.title("Calculator")  # Title Bar Name
-root.resizable(height=0, width=0)  # Non Resizable window
+root.title("Better Calculator")
+root.resizable(height=0, width=0)
 
 # Frames
-main_frame = Frame(
-    root, borderwidth=0, bg=bg_color
-)  # First frame in Root window - Main_frame
-screen_frame = Frame(
-    root, borderwidth=0, bg=bg_color
-)  # Second frame in Root window - Screen_frame
-Mid_frame = Frame(
-    root, borderwidth=0, bg=bg_color
-)  # Third frame in Root window - Mid_frame
+main_frame = Frame(root, borderwidth=0, bg=bg_color)
+screen_frame = Frame(root, borderwidth=0, bg=bg_color)
+Mid_frame = Frame(root, borderwidth=0, bg=bg_color)
 
 # Photo Header
 image = Image.open("Calculator.png")  # Opening the Image
-photo = ImageTk.PhotoImage(
-    image.resize((45, 45), Image.ANTIALIAS)
-)  # Resizing the Image
-label0 = Button(
-    main_frame,
-    image=photo,
-    bg=bg_color,
-    activebackground=bg_color,
-    justify=CENTER,
-    bd=0,
-    command=aot,
-)
+photo = ImageTk.PhotoImage(image.resize((45, 45), Image.ANTIALIAS))
 
 # Text Header
 label = Label(
@@ -333,11 +329,20 @@ label = Label(
     justify=CENTER,
 )
 
+# AOT BUTTON
+label0 = Button(
+    main_frame,
+    image=photo,
+    bg=bg_color,
+    activebackground=bg_color,
+    justify=CENTER,
+    bd=0,
+    command=aot,
+)
+
 # Radio Buttons for selecting theme
 _variable = StringVar()
-
 _variable.set(theme_name)
-
 Themes = [content["Theme 1"]["Theme Name"],
           content["Theme 2"]["Theme Name"]]
 
@@ -359,21 +364,16 @@ for column_number, theme in enumerate(Themes):
     )
     r.grid(row=2, column=column_number)
     radio_list.append(r)
+
 # Screen Of the calculator - Entry Widget
 screen = Entry(
-    screen_frame,
-    bg=bg_color,
-    foreground=fg_color,
-    relief=SUNKEN,
-    font="Ariel 30 ",
-    cursor="arrow",
-    selectbackground="#2C2B2C",
-    selectforeground=fg_color,
-    highlightcolor="red",
-    highlightbackground="cyan",
-    borderwidth=1,
-    justify=RIGHT,
-    insertbackground=fg_color,
+    screen_frame, relief=SUNKEN,
+    bg=scrn_bg, fg=scrn_fg,
+    selectbackground=scrn_sb,
+    selectforeground=scrn_sf,
+    borderwidth=1, justify=RIGHT,
+    font="Ariel 30", cursor="arrow",
+    insertbackground=scrn_cur,
 )
 screen.pack(side=TOP, pady=10, padx=10)
 
@@ -844,6 +844,9 @@ for button in sci_list + sci_list2:
 
 inverse_button.bind("<Enter>", change_on_hovering)
 inverse_button.bind("<Leave>", return_on_hovering)
+
+mid_button.bind("<Enter>", change_on_hovering)
+mid_button.bind("<Leave>", return_on_hovering)
 
 mid_button.pack()
 Mid_frame.pack(padx=10, pady=0)
