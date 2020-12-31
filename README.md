@@ -1,4 +1,4 @@
-    updated: Wednesday, 30th December 2020
+    updated: Thursday, 31th December 2020
 
 <div align="center">
   <a href="https://github.com/warmachine028/Better-Calculator">
@@ -8,7 +8,7 @@
     A better and refined alternative
   </p>
   <a href="https://github.com/warmachine028/Better-Calculator">
-    <img src="https://img.shields.io/badge/version-V3.0-lawngreen" alt="Current Ver: V3.0">
+    <img src="https://img.shields.io/badge/version-V3.1-lawngreen" alt="Current Ver: V3.1">
   </a>
 
 </div>
@@ -80,7 +80,7 @@
 >
 > 4. Always download the Latest version : [Better Calculator.py V2.2](Better%20Calculator.py)
 >
-> 5. Now you can Change colour attributes to match your theme in the calculator itself [Colour Attributes](Colour_Attributes.json) from this current version i.e V3.0
+> 5. Now you can Change colour attributes to match your theme in the calculator itself [Colour Attributes](Colour_Attributes.json) from this current version i.e V3.1
 >
 > 6. View [CHANGELOG](.github/CHANGELOG.md) for detailed updates and issues.
 
@@ -92,27 +92,27 @@
 
 - The Pandemic was very booring and monotonic so I thought of making something which is necessary and fulfils the following criterias :-
 
-  i) Useful
+  1. Useful
 
-  ii) Easy to use
+  2. Easy to use
 
-  iii) Minimalistic UX design
+  3. Minimalistic UX design
 
-  iv) Uses some GUI framework
+  4. Uses some GUI framework
 
 - The calculators already available online had the following shortcommings according to my study on calculator applications :-
 
-  i) Complex to use
+  1. Complex to use
+  
+  2. Had a very basic design
 
-  ii) Had a very basic design
+  3. Had no themes
 
-  iii) Had no themes
+  4. Had no special features like AOT\*, Hover
 
-  iv) Had no special features like AOT\*, Hover
+  5. Had no have Scientific mode
 
-  v) Had no have Scientific mode
-
-  vi) Was not so user friendly
+  6. Was not so user friendly
 
 - Also those days I could'nt find an appropriate calculator application online which suited my choice and designs.
 
