@@ -1,6 +1,17 @@
 # CHANGELOG
 
-    Updated on: 30th December 2020
+    Updated on: 31th December 2020
+
+## [V3.1]
+
+### _31th December 2020_
+
+- Shortened Code by using DRY methodology
+- Removed unnecessary Special Colours
+- Added individual screen colours in "Colour_attributes"
+- Added a change() function to handle theme changes
+- Fixed !frame4.!frame2 not showing hover colours
+- Fixed App crashes and inturrupts in inputs randomly
 
 ## [V3.0]
 
