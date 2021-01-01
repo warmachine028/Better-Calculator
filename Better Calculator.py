@@ -1,12 +1,8 @@
 """
-CHANGE LOG: Ver : 3.1
->> 31st December 2020
->> Shortened Code by using DRY methodology
->> Removed unnecessary Special Colours
->> Added individual screen colours in "Colour_attributes"
->> Added a change() function to handle theme changes 
->> Fixed !frame4.!frame2 not showing hover colours
->> Fixed App crashes and inturrupts in inputs randomly
+CHANGE LOG: Ver : 3.2
+>> 1st January 2021
+>> Removed Unnecessary Code in change_theme() function
+>> Fixed (e)exponential power error
 
 """
 
@@ -16,7 +12,7 @@ from tkinter import *
 from PIL import Image, ImageTk
 
 # Parsing Colours
-with open("Colour Attributes.json", "r") as f:
+with open(r"Colour Attributes.json", "r") as f:
     content = json.load(f)
 
 # Default Primary Values
@@ -82,56 +78,34 @@ def aot():
 
 # Function Changes theme colors radio button input
 def change_theme():
-    """Function Changes Theme from radio button input"""
     global bg_color, fg_color, aot_color, hover, radio_color
     global scrn_bg, scrn_fg, scrn_sb, scrn_sf, scrn_cur
     global sci_bg, sci_fg, inv_color, sci_hover, sci_hover_inverse
 
-    # For Light Theme
+    _theme = content["Theme 1"]
+    
+    # For Theme 2
     if _variable.get() == content["Theme 2"]["Theme Name"]:
-        # Theme Colors
         _theme = content["Theme 2"]
-        bg_color = _theme["Background Color"]
-        fg_color = _theme["Foreground Color"]
-        aot_color = _theme["AOT active Text Color"]
-        hover = _theme["Hover Color"]
-        radio_color = _theme["Radio Switch Color"]
 
-        scrn_bg = _theme["Input Screen Color"]["Background Color"]
-        scrn_fg = _theme["Input Screen Color"]["Foreground Color"]
-        scrn_sb = _theme["Input Screen Color"]["Select Background"]
-        scrn_sf = _theme["Input Screen Color"]["Select Foreground"]
-        scrn_cur = _theme["Input Screen Color"]["Cursor Color"]
+    bg_color = _theme["Background Color"]
+    fg_color = _theme["Foreground Color"]
+    aot_color = _theme["AOT active Text Color"]
+    hover = _theme["Hover Color"]
+    radio_color = _theme["Radio Switch Color"]
 
-        sci_bg = _theme["Scientific Colors"]["Background Color"]
-        sci_fg = _theme["Scientific Colors"]["Foreground Color"]
-        inv_color = _theme["Scientific Colors"]["|INV| Color"]
-        sci_hover = _theme["Scientific Colors"]["Hover Color"]
-        sci_hover_inverse = _theme["Scientific Colors"]["Hover Color |INV|"]
-        change()
+    scrn_bg = _theme["Input Screen Color"]["Background Color"]
+    scrn_fg = _theme["Input Screen Color"]["Foreground Color"]
+    scrn_sb = _theme["Input Screen Color"]["Select Background"]
+    scrn_sf = _theme["Input Screen Color"]["Select Foreground"]
+    scrn_cur = _theme["Input Screen Color"]["Cursor Color"]
 
-    # For Dark Theme
-    elif _variable.get() == content["Theme 1"]["Theme Name"]:
-        # Theme Colors
-        _theme = content["Theme 1"]
-        bg_color = _theme["Background Color"]
-        fg_color = _theme["Foreground Color"]
-        aot_color = _theme["AOT active Text Color"]
-        hover = _theme["Hover Color"]
-        radio_color = _theme["Radio Switch Color"]
-
-        scrn_bg = _theme["Input Screen Color"]["Background Color"]
-        scrn_fg = _theme["Input Screen Color"]["Foreground Color"]
-        scrn_sb = _theme["Input Screen Color"]["Select Background"]
-        scrn_sf = _theme["Input Screen Color"]["Select Foreground"]
-        scrn_cur = _theme["Input Screen Color"]["Cursor Color"]
-
-        sci_bg = _theme["Scientific Colors"]["Background Color"]
-        sci_fg = _theme["Scientific Colors"]["Foreground Color"]
-        inv_color = _theme["Scientific Colors"]["|INV| Color"]
-        sci_hover = _theme["Scientific Colors"]["Hover Color"]
-        sci_hover_inverse = _theme["Scientific Colors"]["Hover Color |INV|"]
-        change()
+    sci_bg = _theme["Scientific Colors"]["Background Color"]
+    sci_fg = _theme["Scientific Colors"]["Foreground Color"]
+    inv_color = _theme["Scientific Colors"]["|INV| Color"]
+    sci_hover = _theme["Scientific Colors"]["Hover Color"]
+    sci_hover_inverse = _theme["Scientific Colors"]["Hover Color |INV|"]
+    change()
 
 
 # Function to set the changed colors to the application
@@ -146,22 +120,26 @@ def change():
     sci_upper_frame.configure(bg=sci_bg)
     main_frame.configure(bg=bg_color)
     screen_frame.configure(bg=bg_color)
-    screen.configure(bg=scrn_bg, fg=scrn_fg,
-                     selectbackground=scrn_sb,
-                     selectforeground=scrn_fg,
-                     insertbackground=scrn_cur)
+    screen.configure(
+        bg=scrn_bg,
+        fg=scrn_fg,
+        selectbackground=scrn_sb,
+        selectforeground=scrn_fg,
+        insertbackground=scrn_cur,
+    )
 
     mid_button.configure(
-        bg=bg_color, fg=fg_color,
+        bg=bg_color,
+        fg=fg_color,
         activebackground=bg_color,
         activeforeground=fg_color,
     )
 
     [widget.configure(bg=sci_bg) for widget in sci_list + sci_list2 + inverted_list]
 
-    inverse_button.configure(
-        bg=inv_color
-    ) if inv_toggle else inverse_button.configure(bg=sci_bg)
+    inverse_button.configure(bg=inv_color) if inv_toggle else inverse_button.configure(
+        bg=sci_bg
+    )
 
     for radiobutton in radio_list:
         radiobutton.configure(
@@ -204,7 +182,8 @@ def change_on_hovering(event):
     if parent in [".!frame4.!frame", ".!frame4.!frame2", ".!frame4.!frame3"]:
         if widget["text"] == "INV":
             widget.configure(bg=sci_hover_inverse) if inv_toggle else widget.configure(
-                bg=sci_hover)
+                bg=sci_hover
+            )
             return
         else:
             widget.configure(bg=sci_hover)
@@ -262,7 +241,7 @@ def click(event):
 
     elif btn_text == "⇐":
         expression = screen.get()
-        expression = expression[0: len(expression) - 1]
+        expression = expression[0 : len(expression) - 1]
         screen.delete(0, END)
         screen.insert(0, expression)
         return
@@ -275,15 +254,19 @@ def click(event):
 def replace_(expression):
     """Function Replaces visual elements with functioning elements ,adds and removes redundant parenthesis."""
     original = ["×", "÷", "^", "π", "e", "sin⁻¹(", "cos⁻¹(", "tan⁻¹(", "!", "√"]
-    replaced = ["*", "/", "**",
-                str(math.pi),
-                str(math.e),
-                "asin(",
-                "acos(",
-                "atan(",
-                "factorial(",
-                "square_root(",
-                ]
+    replaced = [
+        "*",
+        "/",
+        "**",
+        str(math.pi),
+        str(math.e),
+        "asin(",
+        "acos(",
+        "atan(",
+        "factorial(",
+        "square_root(",
+    ]
+
     for original_, replaced_ in zip(original, replaced):
         new_text = expression.replace(original_, replaced_)
         expression = new_text
@@ -297,12 +280,14 @@ def replace_(expression):
         expl = list(expression)
         expl.remove(")")
         expression = "".join(expl)
+    print(expression)
     return expression
 
 
 # The Actual GUI - Front_End
 root = Tk()
 root.geometry("267x500")
+
 
 root.configure(bg=bg_color)
 root.wm_iconbitmap("Cal_icon.ico")
@@ -342,9 +327,9 @@ label0 = Button(
 
 # Radio Buttons for selecting theme
 _variable = StringVar()
+
 _variable.set(theme_name)
-Themes = [content["Theme 1"]["Theme Name"],
-          content["Theme 2"]["Theme Name"]]
+Themes = [content["Theme 1"]["Theme Name"], content["Theme 2"]["Theme Name"]]
 
 for column_number, theme in enumerate(Themes):
     r = Radiobutton(
@@ -367,12 +352,16 @@ for column_number, theme in enumerate(Themes):
 
 # Screen Of the calculator - Entry Widget
 screen = Entry(
-    screen_frame, relief=SUNKEN,
-    bg=scrn_bg, fg=scrn_fg,
+    screen_frame,
+    relief=SUNKEN,
+    bg=scrn_bg,
+    fg=scrn_fg,
     selectbackground=scrn_sb,
     selectforeground=scrn_sf,
-    borderwidth=1, justify=RIGHT,
-    font="Ariel 30", cursor="arrow",
+    borderwidth=1,
+    justify=RIGHT,
+    font="Ariel 30",
+    cursor="arrow",
     insertbackground=scrn_cur,
 )
 screen.pack(side=TOP, pady=10, padx=10)
@@ -729,7 +718,7 @@ def calculate_sc_inv(event):
         screen.insert(END, "tan⁻¹(")
         return
     elif btn_text == "eˣ":
-        screen.insert(END, "exp(")
+        screen.insert(END, "e^")
         return
     elif btn_text == "10^":
         screen.insert(END, "10^")
@@ -792,7 +781,8 @@ for row_number in range(2):
             activeforeground=sci_fg,
         )
         o.grid(
-            row=row_number, column=column_number,
+            row=row_number,
+            column=column_number,
         )
         sci_list2.append(o)
         i += 1
