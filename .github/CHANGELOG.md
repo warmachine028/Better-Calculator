@@ -1,10 +1,17 @@
 # CHANGELOG
 
-    Updated on: 31th December 2020
+    Updated on: 1st January 2021
+
+## [V3.2]
+
+### _1st January 2021_
+
+- Removed Unnecessary Code in change_theme() function
+- Fixed (e) exponential power error
 
 ## [V3.1]
 
-### _31th December 2020_
+### _31st December 2020_
 
 - Shortened Code by using DRY methodology
 - Removed unnecessary Special Colours
