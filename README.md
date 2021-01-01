@@ -1,4 +1,4 @@
-    updated: Thursday, 31th December 2020
+    updated: Friday, 1st January 2021
 
 <div align="center">
   <a href="https://github.com/warmachine028/Better-Calculator">
@@ -8,9 +8,8 @@
     A better and refined alternative
   </p>
   <a href="https://github.com/warmachine028/Better-Calculator">
-    <img src="https://img.shields.io/badge/version-V3.1-lawngreen" alt="Current Ver: V3.1">
+    <img src="https://img.shields.io/badge/version-V3.2-lawngreen" alt="Current Ver: V3.2">
   </a>
-
 </div>
 
 # [Better Calculator](https://github.com/warmachine028/Better-Calculator)
@@ -71,16 +70,16 @@
 
 ## Usage
 
-> 1. Simply click 'Open':
+> 1. Simply click `Open`:
 >    ![Open](Images/open.png)
 > 2. Then you can see this window:
 >    ![calculator](Images/calculator.png)
 > 3. Old versions archived in ['/versions'](versions) folder:
 >    ![versions](Images/versions.png)
 >
-> 4. Always download the Latest version : [Better Calculator.py V2.2](Better%20Calculator.py)
+> 4. Always download the Latest version : [Better Calculator.py V3.2](Better%20Calculator.py)
 >
-> 5. Now you can Change colour attributes to match your theme in the calculator itself [Colour Attributes](Colour_Attributes.json) from this current version i.e V3.1
+> 5. Now you can Change colour attributes to match your theme in the calculator itself [Colour Attributes](Colour_Attributes.json) from the version V3.1
 >
 > 6. View [CHANGELOG](.github/CHANGELOG.md) for detailed updates and issues.
 
@@ -108,7 +107,7 @@
 
   3. Had no themes
 
-  4. Had no special features like AOT\*, Hover
+  4. Had no special features
 
   5. Had no have Scientific mode
 
