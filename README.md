@@ -1,4 +1,4 @@
-    updated: Friday, 1st January 2021
+    updated: Saturday, 2nd January 2021
 
 <div align="center">
   <a href="https://github.com/warmachine028/Better-Calculator">
@@ -8,7 +8,7 @@
     A better and refined alternative
   </p>
   <a href="https://github.com/warmachine028/Better-Calculator">
-    <img src="https://img.shields.io/badge/version-V3.2-lawngreen" alt="Current Ver: V3.2">
+    <img src="https://img.shields.io/badge/version-V3.3-lawngreen" alt="Current Ver: V3.3">
   </a>
 </div>
 
@@ -77,7 +77,7 @@
 > 3. Old versions archived in ['/versions'](versions) folder:
 >    ![versions](Images/versions.png)
 >
-> 4. Always download the Latest version : [Better Calculator.py V3.2](Better%20Calculator.py)
+> 4. Always download the Latest version : [Better Calculator.py V3.3](Better%20Calculator.py)
 >
 > 5. Now you can Change colour attributes to match your theme in the calculator itself [Colour Attributes](Colour_Attributes.json) from the version V3.1
 >
