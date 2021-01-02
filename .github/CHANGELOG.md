@@ -1,6 +1,14 @@
 # CHANGELOG
 
-    Updated on: 1st January 2021
+    Updated on: 2nd January 2021
+
+## [V3.3]
+
+### _2nd January 2021_
+
+- Fixed redundant outputs on console
+- Fixed |INV| button activebackground  
+   colour when |INV| activated
 
 ## [V3.2]
 
