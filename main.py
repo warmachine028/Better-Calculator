@@ -13,7 +13,7 @@ from tkinter import *
 from PIL import Image, ImageTk
 
 # Parsing Colours
-with open(r"Colour Attributes.json", "r") as f:
+with open(r"themes.json", "r") as f:
     content = json.load(f)
 
 Default = content["Theme 1"]
@@ -301,7 +301,7 @@ screen_frame = Frame(root, borderwidth=0, bg=bg_color)
 Mid_frame = Frame(root, borderwidth=0, bg=bg_color)
 
 # Photo Header
-image = Image.open("Calculator.png")  # Opening the Image
+image = Image.open("icon/icon.png")  # Opening the Image
 photo = ImageTk.PhotoImage(image.resize((45, 45), Image.ANTIALIAS))
 
 # Text Header

@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://github.com/warmachine028/Better-Calculator">
-    <img width=200 src="Images/calcico.png" alt="Better Calculator">
+    <img width=200 src="icon/icon.png" alt="Better Calculator">
   </a>
   <p style="font-family: helvetica, calibri; font-size:12pt; font-style:italic">
     A better and refined alternative
@@ -16,13 +16,12 @@
 
 ## _Table of Contents_
 
-- [Introduction](#Introduction)
-- [Getting Started](#Getting-Started)
-  - [Requirements](#1.-Requirements)
-  - [Downloading](#2.-Downloading)
-  - [Extracting](#3.-Extracting)
-- [Usage](#Usage)
-- [Acknowlegement](#Acknowlegement)
+- [Better Calculator](#better-calculator)
+  - [_Table of Contents_](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Getting Started](#getting-started)
+  - [Usage](#usage)
+  - [Acknowlegement](#acknowlegement)
 
 ---
 
@@ -53,16 +52,16 @@
 > ### 2. Downloading
 >
 > 1. Press `Code` button :
->    ![Code Button](Images/code.png)
+>    ![Code Button](img/screen-code.png)
 >
 > 2. Then click on `Download ZIP` :
->    ![ZIP](Images/zip.png)
+>    ![ZIP](img/screen-zip.png)
 >
 > ### 3. Extracting
 >
 > Then extract the file in a new folder using :
 >
-> 1. [7zip](https://www.7-zip.org/a/7z1900-x64.exe)
+> 1. [7zip](https://www.7-zip.org)
 >    or
 > 2. [winrar](https://www.win-rar.com/predownload.html?&L=0)
 
@@ -70,18 +69,11 @@
 
 ## Usage
 
-> 1. Simply click `Open`:
->    ![Open](Images/open.png)
-> 2. Then you can see this window:
->    ![calculator](Images/calculator.png)
-> 3. Old versions archived in ['/versions'](versions) folder:
->    ![versions](Images/versions.png)
+> 1. Always download the Latest version from [releases](https://github.com/warmachine028/Better-Calculator/releases)
 >
-> 4. Always download the Latest version : [Better Calculator.py V3.3](Better%20Calculator.py)
+> 2. To customize your theme, see: [data/themes.json](data/themes.json)
 >
-> 5. Now you can Change colour attributes to match your theme in the calculator itself [Colour Attributes](Colour_Attributes.json) from the version V3.1
->
-> 6. View [CHANGELOG](.github/CHANGELOG.md) for detailed updates and issues.
+> 3. View [CHANGELOG](.github/CHANGELOG.md) for detailed updates and issues.
 
 ---
 
