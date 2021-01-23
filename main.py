@@ -13,7 +13,7 @@ from tkinter import *
 from PIL import Image, ImageTk
 
 # Parsing Colours
-with open(r"Colour Attributes.json", "r") as f:
+with open(r"data/themes.json", "r") as f:
     content = json.load(f)
 
 Default = content["Theme 1"]
@@ -291,7 +291,7 @@ def replace_(expression):
 root = Tk()
 
 root.geometry("267x500")
-root.wm_iconbitmap("Cal_icon.ico")
+root.wm_iconbitmap("icon/icon.ico")
 root.title("Better Calculator")
 root.resizable(height=0, width=0)
 root.configure(bg=bg_color)
@@ -301,7 +301,7 @@ screen_frame = Frame(root, borderwidth=0, bg=bg_color)
 Mid_frame = Frame(root, borderwidth=0, bg=bg_color)
 
 # Photo Header
-image = Image.open("Calculator.png")  # Opening the Image
+image = Image.open("icon/icon.png")  # Opening the Image
 photo = ImageTk.PhotoImage(image.resize((45, 45), Image.ANTIALIAS))
 
 # Text Header
