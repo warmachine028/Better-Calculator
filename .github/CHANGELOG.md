@@ -1,13 +1,25 @@
 # CHANGELOG
 
-    Updated on: 2nd January 2021
+    Updated on: 26th January 2021
+
+## [V3.4]
+
+### _26th January 2021_
+
+- Rename primary script to 'main.py'
+- Created folder "data" -> shifted 1 file
+  - Colour_Arrtibutes.json -> 'data\themes.json'
+- Created folder "icon" -> shifted 2 files
+  - Cal_ico.ico     -> 'icon.ico'
+  - Calculator.png  -> 'icon.png'
+- "img" -> "Images" with renaming contents
 
 ## [V3.3]
 
 ### _2nd January 2021_
 
 - Fixed redundant outputs on console
-- Fixed |INV| button activebackground  
+- Fixed |INV| button activebackground
    colour when |INV| activated
 
 ## [V3.2]
