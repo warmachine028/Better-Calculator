@@ -21,6 +21,7 @@
   - [Getting Started](#getting-started)
   - [Usage](#usage)
   - [Acknowlegement](#acknowlegement)
+  - [Previews](#previews)
 
 ---
 
@@ -78,8 +79,7 @@
 >
 > 5. Old versions archived in ['/versions'](versions) folder:
 >    ![versions](img/screen-versions.png)
->
-> 6.
+
 ---
 
 ## Acknowlegement
@@ -99,7 +99,7 @@
 - The calculators already available online had the following shortcommings according to my study on calculator applications :-
 
   1. Complex to use
-  
+
   2. Had a very basic design
 
   3. Had no themes
@@ -113,3 +113,40 @@
 - Also those days I could'nt find an appropriate calculator application online which suited my choice and designs.
 
 - So I thought why not try to build one for myself and the community. :)
+
+## Previews
+
+<style>
+*{
+  box-sizing: border-box;
+}
+
+.column{
+  float: left;
+  width: 50%;
+  padding: 20px;
+  font-family: Century Gothic;
+  font-size: 120%;
+  font-style: italic;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+</style>
+
+  <div class="row">
+    <div align="center">
+      <div class="column">
+        <img src="img/screen-calculator.png" height=500 width=900 alt="BC light theme" style="">
+        Aurora Light
+      </div>
+      <div class="column">
+        <img src="img/screen-calculator-dark.png" height=500 width=900 alt="BC dark theme" style="">
+        Super Dark
+      </div>
+    </div>
+  </div>
+
