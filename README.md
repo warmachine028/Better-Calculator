@@ -115,6 +115,8 @@
 - So I thought why not try to build one for myself and the community. :)
 
 ## Previews
-      Aurora Light                                        Super Dark
-:----------------------------------------:|:----------------------------------------:
- ![](img/screen-calculator.png)           | ![](img/screen-calculator-dark.png)
+
+
+|      Aurora Light                        |                Super Dark                |
+|:----------------------------------------:|:----------------------------------------:|
+| ![](img/screen-calculator.png)           | ![](img/screen-calculator-dark.png)      |
