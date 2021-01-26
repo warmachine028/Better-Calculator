@@ -1,9 +1,12 @@
 """
-CHANGE LOG: Ver : 3.3
->> 2nd January 2021
->> Fixed redundant outputs on console
->> Fixed |INV| button activebackground  
-   colour when |INV| activated
+CHANGE LOG: Ver : 3.4
+>> 26th January 2021
+>> Rename primary calculator script to 'main.py'
+>> Created folder "data" -> shifted 1 file 
+   - Colour_Arrtibutes.json -> 'themes.json'
+>> Created folder "icon" -> shifted 2 files
+   - Cal_ico.ico     -> 'icon.ico'
+   - Calculator.png  -> 'icon.png'
 
 """
 
