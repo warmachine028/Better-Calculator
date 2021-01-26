@@ -115,21 +115,6 @@
 - So I thought why not try to build one for myself and the community. :)
 
 ## Previews
-
-
-<table>
-  <tr>
-    <td><img src="img/screen-calculator.png" height=106% width=100%></td>
-    <td><img src="img/screen-calculator-dark.png" height=100% width=100%></td>
-  </tr>
-  <tr>
-    <td align="center" 
-    style="font-family:Century Gothic; 
-           font-size:12pt; 
-           font-style:italic"> Aurora Light </td>
-    <td align="center"
-    style="font-family:Century Gothic; 
-           font-size:12pt; 
-           font-style:italic"> Super Dark </td>
-  </tr>
-</table>
+      Aurora Light                                        Super Dark
+:----------------------------------------:|:----------------------------------------:
+ ![](img/screen-calculator.png)           | ![](img/screen-calculator-dark.png)
