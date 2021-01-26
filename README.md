@@ -116,6 +116,21 @@
 
 ## Previews
 
+
+
+  <div class="row">
+    <div align="center">
+      <div class="column">
+        <img src="img/screen-calculator.png" height=500 width=900 alt="BC light theme" style="">
+        Aurora Light
+      </div>
+      <div class="column">
+        <img src="img/screen-calculator-dark.png" height=500 width=900 alt="BC dark theme" style="">
+        Super Dark
+      </div>
+    </div>
+  </div>
+
 <style>
 *{
   box-sizing: border-box;
@@ -136,17 +151,3 @@
     display: table;
 }
 </style>
-
-  <div class="row">
-    <div align="center">
-      <div class="column">
-        <img src="img/screen-calculator.png" height=500 width=900 alt="BC light theme" style="">
-        Aurora Light
-      </div>
-      <div class="column">
-        <img src="img/screen-calculator-dark.png" height=500 width=900 alt="BC dark theme" style="">
-        Super Dark
-      </div>
-    </div>
-  </div>
-
