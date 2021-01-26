@@ -119,8 +119,8 @@
 
 <table>
   <tr>
-    <td><img src="img/screen-calculator.png" height=550 width=400></td>
-    <td><img src="img/screen-calculator-dark.png" height=550 width=400></td>
+    <td><img src="img/screen-calculator.png" height=106% width=100%></td>
+    <td><img src="img/screen-calculator-dark.png" height=100% width=100%></td>
   </tr>
   <tr>
     <td align="center" 
