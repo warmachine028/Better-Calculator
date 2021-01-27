@@ -1,0 +1,84 @@
+{
+	"Theme 1": {
+		"_comment": "This is the primary theme",
+		"Theme Name": "Super Dark",
+		"Background Color": "black",
+		"Foreground Color": "white",
+		"AOT active Text Color": "cyan",
+		"Hover Color": "grey",
+		"Radio Switch Color": "red",
+		"Radio Text Color": "white",
+		"": "",
+		"Input Screen Color": {
+			"Background Color": "black",
+			"Foreground Color": "white",
+			"Select Background": "white",
+			"Select Foreground": "black",
+			"Cursor Color": "white"
+		},
+		"Scientific Colors": {
+			"Background Color": "grey",
+			"Foreground Color": "white",
+			"|INV| Color": "#15CA9C",
+			"Hover Color": "#3B3E3F",
+			"Hover Color |INV|": "#177351"
+		}
+	},
+	"Theme 3": {
+		"_comment": "This is the secondary theme",
+		"Theme Name": "Aurora Light",
+		"Background Color": "white",
+		"Foreground Color": "black",
+		"AOT active Text Color": "red",
+		"Hover Color": "#3B3E3F",
+		"Radio Switch Color": "cyan",
+		"Radio Text Color":"black",
+		"": "",
+		"Input Screen Color": {
+			"Background Color": "white",
+			"Foreground Color": "black",
+			"Select Background": "black",
+			"Select Foreground": "white",
+			"Cursor Color": "black"
+		},
+		"Scientific Colors": {
+			"Background Color": "#3B3E3F",
+			"Foreground Color": "white",
+			"|INV| Color": "#32CAC9",
+			"Hover Color": "grey",
+			"Hover Color |INV|": "#299493"
+		}
+	},
+	"Theme 2":{
+		"_comment": "This is the new theme",
+		"Theme Name": "Midnight City",
+		"Background Color": "#070713",
+		"Foreground Color": "deeppink",
+		"AOT active Text Color": "green",
+		"Hover Color": "#262668",
+		"Radio Switch Color": "red",
+		"Radio Text Color":"white",
+		"": "",
+		"Input Screen Color": {
+			"Background Color": "#1F0E32",
+			"Foreground Color": "red",
+			"Select Background": "indigo",
+			"Select Foreground": "#070713",
+			"Cursor Color": "white"
+		},
+		"Scientific Colors": {
+			"Background Color": "#0D0C50",
+			"Foreground Color": "white",
+			"|INV| Color": "#8736A8",
+			"Hover Color": "darkblue",
+			"Hover Color |INV|": "#230E2B"
+		}
+	},
+	"Colour Reference": {
+		"#15CA9C": "mint",
+		"#3B3E3F": "grey",
+		"#177351": "dark_mint",
+		"#32CAC9": "cyan",
+		"#299493": "darkcyan"
+	}
+}
