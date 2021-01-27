@@ -13,7 +13,7 @@
 </div>
 
 # [Better Calculator](https://github.com/warmachine028/Better-Calculator)
-    New Themes upcommiong soon
+    New Themes upcomming soon
 ## _Table of Contents_
 
 - [Better Calculator](#better-calculator)
