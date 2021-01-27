@@ -33,15 +33,15 @@
 
 ## Introduction
 
-- This is my first Project in github.
+- This is my first Project in github.  
 
-- It's a wonderful calculator which is fully feature packed.
+- It's a wonderful calculator which is fully feature packed.  
 
-- This is a completely new concept.
+- This is a completely new concept.  
 
-- Please contribute to it 🙏 and show me how to imporve my github skills and update this project. :)
+- Please contribute to it 🙏 and show me how to imporve my github skills and update this project. :)  
 
-- Please find issues and suggest changes.
+- Please find issues and suggest changes.  
 
 ---
 
@@ -90,61 +90,61 @@
 
 > ### 1. use AOT feature
   >
-  > Press the icon beside the label ```Calculator```
-  > ```AOT ACTIVE```: colour of the label changes and becomes italic
-  > ```AOT INACTIVE```: colour of label reverts and becomes normal
+  > Press the icon beside the label ```Calculator```  
+  > ```AOT ACTIVE```: colour of the label changes and becomes italic  
+  > ```AOT INACTIVE```: colour of label reverts and becomes normal  
   >
-  >![aot](img\aot.gif)
+  >![aot](.\img\aot.gif)  
 >
 ---
 
 > ### 2. use Scientific Mode
   >
-  > Press the ```=``` button below Entry widget to open scientific menu
-  > To activate inverse Trigonometric Functions press ```INV```
-  > To use factorial function press ```!``` first and then enter the input.
+  > Press the ```=``` button below Entry widget to open scientific menu  
+  > To activate inverse Trigonometric Functions press ```INV```  
+  > To use factorial function press ```!``` first and then enter the input.  
   >
-  > ![sci-mode](img\scientific_mode.gif)
+  > ![sci-mode](img\scientific_mode.gif)  
 >
 ---
 
 > ### 3. set a Custom theme
   >
-  > Open _data/thems.json_
-  > Rename ```Theme 1``` / ```Theme 2``` to the required themes
+  > Open _data/thems.json_  
+  > Rename ```Theme 1``` / ```Theme 2``` to the required themes  
   >
-  > ![changing-theme](img\setting_themes.gif)
+  > ![changing-theme](img\setting_themes.gif)  
 ---
 
-## Customizations
+## Customizations  
 
   ![Customizations](img\customization.gif)
 
 - Attributes:
-  > ```_comment```: Short description about the theme
-  > ```Theme name```: The name of theme which appears in the application
-  > ```Background Color```: The background color of the application
-  > ```Foreground Color```: The text-color of left buttons
-  > ```AOT active Text Color```: The accent color of the app
-                                - Text color of right side buttons
-                                - Text color of label: AOT active
-  > ```Hover Color```: The color when mouse pointer is hovering above buttons
-  > ```Radio Switch Color```: The color of theme changer (circular button)
-  > ```Radio Text Color```: The color of the text of theme changer
+  > ```_comment```: Short description about the theme  
+  > ```Theme name```: The name of theme which appears in the application  
+  > ```Background Color```: The background color of the application  
+  > ```Foreground Color```: The text-color of left buttons  
+  > ```AOT active Text Color```: The accent color of the app  
+                                - Text color of right side buttons  
+                                - Text color of label: AOT active  
+  > ```Hover Color```: The color when mouse pointer is hovering above buttons  
+  > ```Radio Switch Color```: The color of theme changer (circular button)  
+  > ```Radio Text Color```: The color of the text of theme changer  
   >
-  > Input Screen Color 
-    ```Background Color```: The background of input screen
-    ```Foreground Color```: The text-color of input screen
-    ```Select Background```: The background of selected text
-    ```Select Foreground```: The text color of selected text
-    ```Cursor Color```: The color of cursor in the screen
+  > Input Screen Color  
+    ```Background Color```: The background of input screen  
+    ```Foreground Color```: The text-color of input screen  
+    ```Select Background```: The background of selected text  
+    ```Select Foreground```: The text color of selected text  
+    ```Cursor Color```: The color of cursor in the screen  
   >
-  > Scientific Colors": {
-    ```Background Color```: The background of scientific buttons
-    ```Foreground Color```: The text-color of scientific buttons
-    ```|INV| Color```: The color of Inverse Button when active
-    ```Hover Color```: The color when mouse pointer is above scientific buttons
-    ```Hover Color |INV|```: The color when mouse is above "activated" inverse button
+  > Scientific Colors":  
+    ```Background Color```: The background of scientific buttons  
+    ```Foreground Color```: The text-color of scientific buttons  
+    ```|INV| Color```: The color of Inverse Button when active  
+    ```Hover Color```: The color when mouse pointer is above scientific buttons  
+    ```Hover Color |INV|```: The color when mouse is above "activated" inverse button  
   
 ---
 
