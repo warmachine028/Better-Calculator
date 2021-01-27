@@ -1,7 +1,14 @@
 """
 CHANGE LOG: Ver : 3.4
->> App now opens at the centre of the window
->> Added a new function caalled modify to set root attributes
+>> 27th January 2021
+>> Fixed screen foreground glitch after changing theme
+>> Rename primary calculator script to 'main.py'
+>> Created folder "data" -> shifted 1 file 
+   - Colour_Arrtibutes.json -> 'themes.json'
+>> Created folder "icon" -> shifted 2 files
+   - Cal_ico.ico     -> 'icon.ico'
+   - Calculator.png  -> 'icon.png'
+
 """
 
 import json
@@ -10,7 +17,7 @@ from tkinter import *
 from PIL import Image, ImageTk
 
 # Parsing Colours
-with open(r"Colour Attributes.json", "r") as f:
+with open(r"data/themes.json", "r") as f:
     content = json.load(f)
 
 Default = content["Theme 1"]
@@ -59,6 +66,7 @@ radio_list = list()  # For exclusive radio buttons <Themes>
 def aot():
     """To Keep window always on top"""
     global aot_toggle
+
     # To Toggle On
     if not aot_toggle:
         root.attributes("-topmost", True)
@@ -283,47 +291,43 @@ def replace_(expression):
     return expression
 
 
-def modify(window):
-    _geometry(window)
-    window.wm_iconbitmap("Cal_icon.ico")
-    window.title("Better Calculator")
-    window.resizable(height=0, width=0)
-    window.configure(bg=bg_color)
-
-
-def _geometry(window):
-    width, height = 267, 500
-    x_cord = (window.winfo_screenwidth() - width) // 2
-    y_cord = (window.winfo_screenheight() - height) // 2
-    window.geometry(f"{width}x{height}+{x_cord}+{y_cord}")
-
-
 # The Actual GUI - Front_End
 root = Tk()
-modify(root)
 
+root.geometry("267x500")
+root.wm_iconbitmap("icon/icon.ico")
+root.title("Better Calculator")
+root.resizable(height=0, width=0)
+root.configure(bg=bg_color)
 # Frames
 main_frame = Frame(root, borderwidth=0, bg=bg_color)
 screen_frame = Frame(root, borderwidth=0, bg=bg_color)
 Mid_frame = Frame(root, borderwidth=0, bg=bg_color)
 
 # Photo Header
-image = Image.open("Calculator.png")  # Opening the Image
+image = Image.open("icon/icon.png")  # Opening the Image
 photo = ImageTk.PhotoImage(image.resize((45, 45), Image.ANTIALIAS))
 
 # Text Header
-label = Label(main_frame, text="Calculator",
-              font="Verdana 13 ",
-              fg=fg_color, bg=bg_color,
-              justify=CENTER)
+label = Label(
+    main_frame,
+    text="Calculator",
+    font="Verdana 13 ",
+    fg=fg_color,
+    bg=bg_color,
+    justify=CENTER,
+)
 
 # AOT BUTTON
-label0 = Button(main_frame, image=photo,
-                cursor="hand2",
-                bg=bg_color, bd=0,
-                activebackground=bg_color,
-                justify=CENTER,
-                command=aot)
+label0 = Button(
+    main_frame,
+    image=photo,
+    bg=bg_color,
+    activebackground=bg_color,
+    justify=CENTER,
+    bd=0, cursor="hand2",
+    command=aot,
+)
 
 # Radio Buttons for selecting theme
 _variable = StringVar()
