@@ -1,6 +1,17 @@
 # CHANGELOG
 
-    Updated on: 27th January 2021
+    Updated on: 28th January 2021
+
+## [V4.0]
+
+### _28th January 2021_
+
+- Added a new theme: Midnight City
+- Read README to know how to change themes
+- Added new attribute: radio_fg
+- Added 2 functions:
+  - modify()    -> to handle icon and title
+  - _geometry() -> to open calculator at the center
 
 ## [V3.4]
 
