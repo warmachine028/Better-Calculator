@@ -1,4 +1,4 @@
-    updated: Wednesday, 27th January 2021
+    updated: Thursday, 28th January 2021
 
 <div align="center">
   <a href="https://github.com/warmachine028/Better-Calculator">
@@ -8,18 +8,22 @@
     A new colour for a new mood
   </p>
   <a href="https://github.com/warmachine028/Better-Calculator">
-    <img src="https://img.shields.io/badge/version-V3.4-lawngreen" alt="Current Ver: V3.4">
+    <img src="https://img.shields.io/badge/version-V4.0-lawngreen" alt="Current Ver: V4.0">
   </a>
 </div>
 
 # [Better Calculator](https://github.com/warmachine028/Better-Calculator)
-    New Themes upcomming soon
+
+    New theme: Midnight City
+
 ## _Table of Contents_
 
 - [Better Calculator](#better-calculator)
   - [Introduction](#introduction)
   - [Getting Started](#getting-started)
   - [Usage](#usage)
+  - [How to](#how-to)
+  - [Customizations](#customizations)
   - [Acknowlegement](#acknowlegement)
   - [Previews](#previews)
 
@@ -82,6 +86,68 @@
 
 ---
 
+## How to
+
+> ### 1. use AOT feature
+  >
+  > Press the icon beside the label ```Calculator```
+  > ```AOT ACTIVE```: colour of the label changes and becomes italic
+  > ```AOT INACTIVE```: colour of label reverts and becomes normal
+  >
+  >![aot](img\aot.gif)
+>
+---
+
+> ### 2. use Scientific Mode
+  >
+  > Press the ```=``` button below Entry widget to open scientific menu
+  > To activate inverse Trigonometric Functions press ```INV```
+  > To use factorial function press ```!``` first and then enter the input.
+  >
+  > ![sci-mode](img\scientific_mode.gif)
+>
+---
+
+> ### 3. set a Custom theme
+  >
+  > Open _data/thems.json_
+  > Rename ```Theme 1``` / ```Theme 2``` to the required themes
+  >
+  > ![changing-theme](img\setting_themes.gif)
+---
+
+## Customizations
+
+  ![Customizations](img\customization.gif)
+
+- Attributes:
+  > ```_comment```: Short description about the theme
+  > ```Theme name```: The name of theme which appears in the application
+  > ```Background Color```: The background color of the application
+  > ```Foreground Color```: The text-color of left buttons
+  > ```AOT active Text Color```: The accent color of the app
+                                - Text color of right side buttons
+                                - Text color of label: AOT active
+  > ```Hover Color```: The color when mouse pointer is hovering above buttons
+  > ```Radio Switch Color```: The color of theme changer (circular button)
+  > ```Radio Text Color```: The color of the text of theme changer
+  >
+  > Input Screen Color 
+    ```Background Color```: The background of input screen
+    ```Foreground Color```: The text-color of input screen
+    ```Select Background```: The background of selected text
+    ```Select Foreground```: The text color of selected text
+    ```Cursor Color```: The color of cursor in the screen
+  >
+  > Scientific Colors": {
+    ```Background Color```: The background of scientific buttons
+    ```Foreground Color```: The text-color of scientific buttons
+    ```|INV| Color```: The color of Inverse Button when active
+    ```Hover Color```: The color when mouse pointer is above scientific buttons
+    ```Hover Color |INV|```: The color when mouse is above "activated" inverse button
+  
+---
+
 ## Acknowlegement
 
 - I took up this project as a lockdown hobby but later turned it into a serious project as I had to do something for my University Assignment.
@@ -116,7 +182,8 @@
 
 ## Previews
 
-
-|      Aurora Light                        |                Super Dark                |
-|:----------------------------------------:|:----------------------------------------:|
-| ![](img/screen-calculator.png)           | ![](img/screen-calculator-dark.png)      |
+|              Aurora Light            |                Super Dark               |
+| :----------------------------------: | :-------------------------------------: |
+| ![normal](img/screen-calculator.png) | ![dark](img/screen-calculator-dark.png) |
+|            Midnight City             |
+|    ![midc](img/midnight-city.jpg)    |
