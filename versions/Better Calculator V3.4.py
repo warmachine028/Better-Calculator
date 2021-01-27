@@ -1,6 +1,7 @@
 """
 CHANGE LOG: Ver : 3.4
->> 26th January 2021
+>> 27th January 2021
+>> Fixed screen foreground glitch after changing theme
 >> Rename primary calculator script to 'main.py'
 >> Created folder "data" -> shifted 1 file 
    - Colour_Arrtibutes.json -> 'themes.json'
@@ -131,7 +132,7 @@ def change():
     screen.configure(
         bg=scrn_bg, fg=scrn_fg,
         selectbackground=scrn_sb,
-        selectforeground=scrn_fg,
+        selectforeground=scrn_sf,
         insertbackground=scrn_cur)
 
     mid_button.configure(
