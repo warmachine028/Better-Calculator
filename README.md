@@ -1,11 +1,11 @@
-    updated: Saturday, 26th January 2021
+    updated: Wednesday, 27th January 2021
 
 <div align="center">
   <a href="https://github.com/warmachine028/Better-Calculator">
     <img width=200 src="icon/icon.png" alt="Better Calculator">
   </a>
   <p style="font-family: roboto, calibri; font-size:12pt; font-style:italic">
-    A better and refined alternative
+    A new colour for a new mood
   </p>
   <a href="https://github.com/warmachine028/Better-Calculator">
     <img src="https://img.shields.io/badge/version-V3.4-lawngreen" alt="Current Ver: V3.4">
@@ -13,7 +13,7 @@
 </div>
 
 # [Better Calculator](https://github.com/warmachine028/Better-Calculator)
-
+    New Themes upcommiong soon
 ## _Table of Contents_
 
 - [Better Calculator](#better-calculator)
@@ -49,7 +49,7 @@
 > 2. [7zip](https://www.7-zip.org)
 > 3. Pillow Module. If not installed use command `pip install pillow` in terminal
 >
-> ### 2 Downloading
+> ### 2. Downloading
 >
 > 1. Press `Code` button :
 >    ![Code Button](img/screen-code.png)
