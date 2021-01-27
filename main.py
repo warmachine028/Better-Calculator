@@ -1,13 +1,12 @@
 """
-CHANGE LOG: Ver : 3.4
->> 27th January 2021
->> Fixed screen foreground glitch after changing theme
->> Rename primary calculator script to 'main.py'
->> Created folder "data" -> shifted 1 file 
-   - Colour_Arrtibutes.json -> 'themes.json'
->> Created folder "icon" -> shifted 2 files
-   - Cal_ico.ico     -> 'icon.ico'
-   - Calculator.png  -> 'icon.png'
+CHANGE LOG: Ver : 4.0
+>> 28th January 2021
+>> Added a new theme in Json file along with the old existing themes
+>> Read the README to know how to set themes
+>> Added new attribute: radio_fg
+>> Added 2 functions: 
+    - modify()    -> to handle icon and title
+    - _geometry() -> to open calculator at the center
 
 """
 
@@ -30,6 +29,7 @@ fg_color = Default["Foreground Color"]
 aot_color = Default["AOT active Text Color"]
 hover = Default["Hover Color"]
 radio_color = Default["Radio Switch Color"]
+radio_fg = Default["Radio Text Color"]
 
 "Screen Colors"
 scrn_bg = Default["Input Screen Color"]["Background Color"]
@@ -84,7 +84,7 @@ def aot():
 def theme():
     global bg_color, fg_color, aot_color, hover, radio_color
     global scrn_bg, scrn_fg, scrn_sb, scrn_sf, scrn_cur
-    global sci_bg, sci_fg, inv_color, sci_hover, sci_hover_inverse
+    global sci_bg, sci_fg, inv_color, sci_hover, radio_fg, sci_hover_inverse
 
     _theme = content["Theme 1"]
 
@@ -98,6 +98,7 @@ def theme():
     aot_color = _theme["AOT active Text Color"]
     hover = _theme["Hover Color"]
     radio_color = _theme["Radio Switch Color"]
+    radio_fg = _theme["Radio Text Color"]
 
     "Screen Colors"
     scrn_bg = _theme["Input Screen Color"]["Background Color"]
@@ -159,7 +160,7 @@ def change():
 
     for radiobutton in radio_list:
         radiobutton.configure(
-            bg=bg_color, fg=fg_color,
+            bg=bg_color, fg=radio_fg,
             activebackground=bg_color,
             activeforeground=fg_color,
             selectcolor=radio_color)
@@ -291,14 +292,24 @@ def replace_(expression):
     return expression
 
 
+def modify(window):
+    _geometry(window)
+    window.wm_iconbitmap("icon/icon.ico")
+    window.title("Better Calculator")
+    window.resizable(height=0, width=0)
+    window.configure(bg=bg_color)
+
+
+def _geometry(window):
+    width, height = 267, 500
+    x_cord = (window.winfo_screenwidth() - width) // 2
+    y_cord = (window.winfo_screenheight() - height) // 2
+    window.geometry(f"{width}x{height}+{x_cord}+{y_cord}")
+
 # The Actual GUI - Front_End
 root = Tk()
+modify(root)
 
-root.geometry("267x500")
-root.wm_iconbitmap("icon/icon.ico")
-root.title("Better Calculator")
-root.resizable(height=0, width=0)
-root.configure(bg=bg_color)
 # Frames
 main_frame = Frame(root, borderwidth=0, bg=bg_color)
 screen_frame = Frame(root, borderwidth=0, bg=bg_color)
@@ -339,11 +350,12 @@ for column_number, theme_ in enumerate(Themes):
     r = Radiobutton(
         main_frame, text=f"{theme_}",
         variable=_variable, value=theme_,
-        bg=bg_color, fg=fg_color,
-        cursor="hand2", selectcolor=radio_color,
+        selectcolor=radio_color,
+        bg=bg_color, fg=radio_fg,
+        cursor="hand2", 
         activeforeground=fg_color,
         activebackground=bg_color,
-        indicatoron=True, command=theme,
+        command=theme,
     )
     r.grid(row=2, column=column_number)
     radio_list.append(r)
