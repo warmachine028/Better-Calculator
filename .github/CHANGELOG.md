@@ -1,11 +1,12 @@
 # CHANGELOG
 
-    Updated on: 26th January 2021
+    Updated on: 27th January 2021
 
 ## [V3.4]
 
-### _26th January 2021_
+### _27th January 2021_
 
+- Fixed a glitch on screen foreground color
 - Rename primary script to 'main.py'
 - Created folder "data" -> shifted 1 file
   - Colour_Arrtibutes.json -> 'data\themes.json'
@@ -21,6 +22,9 @@
 - Fixed redundant outputs on console
 - Fixed |INV| button activebackground
    colour when |INV| activated
+
+- Known Bugs:
+  - App does'nt change selectcolor after changing theme
 
 ## [V3.2]
 
