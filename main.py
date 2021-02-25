@@ -1,17 +1,15 @@
 """
-CHANGE LOG: Ver : 4.0
->> 28th January 2021
->> Added a new theme in Json file along with the old existing themes
->> Read the README to know how to set themes
->> Added new attribute: radio_fg
->> Added 2 functions: 
-    - modify()    -> to handle icon and title
-    - _geometry() -> to open calculator at the center
+CHANGE LOG: Ver : 4.0.1
+>> 25th February 2021
+>> Experimental Update
+>> Added a new feature to store history
+>> History of calculations stored in 'data/history.txt'
 
 """
 
 import json
 import math
+import datetime
 from tkinter import *
 from PIL import Image, ImageTk
 
@@ -19,9 +17,10 @@ from PIL import Image, ImageTk
 with open(r"data/themes.json", "r") as f:
     content = json.load(f)
 
+# Default -> 1st theme
+# Default Primary Values
 Default = content["Theme 1"]
 theme_name = Default["Theme Name"]
-# Default Primary Values
 
 "Normal Frame Colors"
 bg_color = Default["Background Color"]
@@ -59,6 +58,9 @@ aot_toggle = False
 widget_list0 = list()  # For buttons having usual 'fg_color' foreground
 widget_list1 = list()  # For buttons having exclusive 'aot_color' foreground
 radio_list = list()  # For exclusive radio buttons <Themes>
+
+# TODAY
+today = datetime.date.today()
 
 
 # some Functions - Front_end
@@ -121,10 +123,7 @@ def change():
     root.configure(bg=bg_color)
     label0.configure(bg=bg_color, fg=fg_color, activebackground=bg_color)
 
-    if aot_toggle:
-        label.configure(bg=bg_color, fg=aot_color)
-    else:
-        label.configure(bg=bg_color, fg=fg_color)
+    label.configure(bg=bg_color, fg=aot_color if aot_toggle else fg_color)
 
     sci_upper_frame.configure(bg=sci_bg)
     main_frame.configure(bg=bg_color)
@@ -225,6 +224,17 @@ def enter_click(event):
     click(event)
 
 
+# Function saves history
+def save(expression):
+    isd = "DATE: " + "-".join(str(today).split("-")[::-1]) + "\n"
+    with open("data/log.txt", "r+") as log_:
+        try:
+            last_date = [date for date in log_.readlines() if date.startswith("DATE:")][-1]
+        except IndexError:
+            last_date = False
+        log_.write(f"{expression}" if last_date == isd else f"{isd}{expression}")
+
+
 # Function to execute click event of  all buttons
 def click(event):
     btn_text = event.widget["text"]
@@ -234,6 +244,7 @@ def click(event):
             answer = eval(expression)
             screen.delete(0, END)
             screen.insert(0, answer)
+            save(f"\t{expression} = {answer}\n")
         except ZeroDivisionError:
             screen.delete(0, END)
             screen.insert(0, "Can't Divide by Zero")
@@ -306,6 +317,7 @@ def _geometry(window):
     y_cord = (window.winfo_screenheight() - height) // 2
     window.geometry(f"{width}x{height}+{x_cord}+{y_cord}")
 
+
 # The Actual GUI - Front_End
 root = Tk()
 modify(root)
@@ -352,7 +364,7 @@ for column_number, theme_ in enumerate(Themes):
         variable=_variable, value=theme_,
         selectcolor=radio_color,
         bg=bg_color, fg=radio_fg,
-        cursor="hand2", 
+        cursor="hand2",
         activeforeground=fg_color,
         activebackground=bg_color,
         command=theme,
@@ -505,8 +517,6 @@ inverted_list = list()
 
 
 # some Scientific Functions - Deep Back End
-
-
 # Function to toggle Scientific Calculator
 def sci_cal():
     """Function to toggle the Scientific Calculator"""
@@ -541,6 +551,7 @@ def sci_cal():
         sci_toggle = False
 
 
+# Function(s) to perform Trigonometry
 def sin(value):
     return math.sin(math.radians(float(value)))
 
@@ -569,6 +580,7 @@ def square_root(value):
     return math.sqrt(float(value))
 
 
+# Function to insert scientific f(x) in screen
 def calculate_sc(event):
     """Function to perform basic Scientific Calculations"""
     btn_text = event.widget["text"]
@@ -656,6 +668,7 @@ def inv():
         inv_toggle = False
 
 
+# Function(s) to perform Inverse Trigonometry
 def asin(value):
     return math.degrees(math.asin(float(value)))
 
@@ -693,7 +706,7 @@ def calculate_sc_inv(event):
         return
 
 
-# Frames
+# Scientific Frames
 sci_frame = Frame(root, bg=sci_bg)
 sci_upper_frame = Frame(sci_frame, bg=sci_bg)
 sci_upper_frame2 = Frame(sci_frame, bg=sci_bg)
@@ -738,7 +751,7 @@ for row_number in range(2):
         sci_list2.append(o)
         i += 1
 
-# Special Buttons
+# Special Inverse Buttons
 button_list_inverted = ["sin⁻¹", "cos⁻¹", "tan⁻¹", "10^", "eˣ"]
 for column_number, text in enumerate(button_list_inverted):
     o = Button(sci_upper_frame2,
@@ -764,7 +777,7 @@ inverse_button = Button(sci_lower_frame,
 # Packing Individual Buttons
 inverse_button.grid(row=1, column=2)
 
-# Binding Buttons
+# Binding All scientific buttons
 for button in inverted_list:
     button.bind("<Enter>", change_on_hovering)
     button.bind("<Leave>", return_on_hovering)
@@ -778,6 +791,7 @@ for button in sci_list + sci_list2:
 inverse_button.bind("<Enter>", change_on_hovering)
 inverse_button.bind("<Leave>", return_on_hovering)
 
+"Uncomment below expressions to enable hover over '=' (middle button)"
 # mid_button.bind("<Enter>", change_on_hovering)
 # mid_button.bind("<Leave>", return_on_hovering)
 
