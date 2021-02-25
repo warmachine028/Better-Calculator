@@ -1,6 +1,14 @@
 # CHANGELOG
 
-    Updated on: 28th January 2021
+    Updated on: 25th February 2021
+
+## [V4.0.1]
+
+### _25th February 2021_
+
+- Experimental Update
+- Added a new feature to store history
+- History of calculations stored in 'data/history.txt'
 
 ## [V4.0]
 
@@ -68,7 +76,6 @@
 - Known Bugs:
   - App stops taking input randomly
 
-
 ## [V2.2]
 
 ### _29th December 2020_
@@ -97,8 +104,6 @@
 - Reduced Code
 - Fixed bugs
 
-- Known Bugs:
-  - Radio buttons initially not chosen (Theme button)
 
 ## [V1.4]
 
@@ -184,5 +189,6 @@
 
 - Starting with the basics
 - Added 2 themes
-- Known Issues
+
+- Known Bugs:
   - Radio Button does'nt show theme initially
