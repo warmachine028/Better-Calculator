@@ -1,14 +1,14 @@
-    updated: Tuesday, 2nd February 2021
+    updated: Thursday, 25th February 2021
 
 <div align="center">
-  <a href="https://github.com/warmachine028/Better-Calculator">
+  <a href="https://warmachine028.github.io/Better-Calculator/">
     <img width=200 src="icon/icon.png" alt="Better Calculator">
   </a>
   <p style="font-family: roboto, calibri; font-size:12pt; font-style:italic">
-    A new colour for a new mood
+    Aesthetic outside Stronger inside
   </p>
-  <a href="https://github.com/warmachine028/Better-Calculator">
-    <img src="https://img.shields.io/badge/version-V4.0-lawngreen" alt="Current Ver: V4.0">
+  <a href="https://warmachine028.github.io/Better-Calculator/">
+    <img src="https://img.shields.io/badge/version-V4.0.1-lawngreen" alt="Current Ver: V4.0.1">
   </a>
 </div>
 
@@ -32,13 +32,15 @@
 
 - This is my first Project in github.
 
-- It's a wonderful calculator which is fully feature packed.
+- Im trying to put all mu dedication into it.
+
+- It's a wonderfully fully feature packed calculator.
 
 - This is a completely new concept.
 
-- Please contribute to it 🙏 and show me how to imporve my github skills and update this project. :)
+- Please contribute to it and show me how to imporve my github skills.
 
-- Please find issues and suggest changes.
+- Find issues and suggest changes.
 
 ---
 
@@ -105,9 +107,17 @@
 
 ---
 
-> ### 3. set a Custom theme
+> ### 3. [Beta] use history Feature
 >
-> Open _data/thems.json_  
+> Open _data/log.txt_  
+> See the history of calculations saved in the log file date wise.  
+> ![history](img/history.png)  
+
+---
+
+> ### 4. set a Custom theme
+>
+> Open _data/themes.json_  
 > Rename `Theme 1` / `Theme 2` to the required themes
 >
 > ![changing-theme](img/setting_themes.gif)
