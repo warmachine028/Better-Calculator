@@ -1,4 +1,4 @@
-    updated: Thursday, 25th February 2021
+    updated: Tuesday, 9th March 2021
 
 <div align="center">
   <a href="https://warmachine028.github.io/Better-Calculator/">
@@ -8,13 +8,13 @@
     Aesthetic outside Stronger inside
   </p>
   <a href="https://warmachine028.github.io/Better-Calculator/">
-    <img src="https://img.shields.io/badge/version-V4.0.1-lawngreen" alt="Current Ver: V4.0.1">
+    <img src="https://img.shields.io/badge/version-V4.1-lawngreen" alt="Current Ver: V4.1">
   </a>
 </div>
 
 # [Better Calculator](https://github.com/warmachine028/Better-Calculator)
 
-## _Table of Contents_
+## Table of Contents
 
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
@@ -107,11 +107,13 @@
 
 ---
 
-> ### 3. [Beta] use history Feature
+> ### 3. use history Feature
 >
-> Open _data/log.txt_  
-> See the history of calculations saved in the log file date wise.  
-> ![history](img/history.png)  
+> Press `H` button beside AOT button to view history.  
+> if log.txt is NULL the Labels will show: Not enough Data  
+> See the history of calculations in reverse order.  
+>  
+> ![history](img/history.gif)  
 
 ---
 
