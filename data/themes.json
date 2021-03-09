@@ -32,7 +32,7 @@
 		"AOT active Text Color": "red",
 		"Hover Color": "#3B3E3F",
 		"Radio Switch Color": "cyan",
-		"Radio Text Color":"black",
+		"Radio Text Color": "black",
 		"": "",
 		"Input Screen Color": {
 			"Background Color": "white",
@@ -49,7 +49,7 @@
 			"Hover Color |INV|": "#299493"
 		}
 	},
-	"Theme 3":{
+	"Theme 3": {
 		"_comment": "This is the new theme",
 		"Theme Name": "Midnight City",
 		"Background Color": "#070713",
@@ -57,7 +57,7 @@
 		"AOT active Text Color": "green",
 		"Hover Color": "#262668",
 		"Radio Switch Color": "red",
-		"Radio Text Color":"white",
+		"Radio Text Color": "white",
 		"": "",
 		"Input Screen Color": {
 			"Background Color": "#1F0E32",
