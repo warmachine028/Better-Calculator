@@ -1,6 +1,20 @@
 # CHANGELOG
 
-    Updated on: 25th February 2021
+    Updated on: 9th March 2021
+
+## [V4.1]
+
+### _9th March 2021_
+
+- Major Update: CALCULATION HISTORY
+- Added `H` button on the top left corner
+- Added 3 functions:
+  - history() -> to pack_forget() frames, adjust geometry() and pack() history frame
+  - scroll() -> to integrate mouse wheel to the Labels in Label_frame
+  - show() -> to initialize '5' labels of Label_frame
+- Added new frame for showing history
+- Added Error checking for NULL log files with : Not enough data
+- Equal button `=` now flashes on pressing return key
 
 ## [V4.0.1]
 
@@ -18,8 +32,8 @@
 - Read README to know how to change themes
 - Added new attribute: radio_fg
 - Added 2 functions:
-  - modify()    -> to handle icon and title
-  - _geometry() -> to open calculator at the center
+  - modify() -> to handle icon and title
+  - \_geometry() -> to open calculator at the center
 
 ## [V3.4]
 
@@ -30,8 +44,8 @@
 - Created folder "data" -> shifted 1 file
   - Colour_Arrtibutes.json -> 'data\themes.json'
 - Created folder "icon" -> shifted 2 files
-  - Cal_ico.ico     -> 'icon.ico'
-  - Calculator.png  -> 'icon.png'
+  - Cal_ico.ico -> 'icon.ico'
+  - Calculator.png -> 'icon.png'
 - "img" -> "Images" with renaming contents
 
 ## [V3.3]
@@ -40,7 +54,7 @@
 
 - Fixed redundant outputs on console
 - Fixed |INV| button activebackground
-   colour when |INV| activated
+  colour when |INV| activated
 
 - Known Bugs:
   - App does'nt change selectcolor after changing theme
@@ -69,7 +83,7 @@
 
 - Shortened the backend code
 - Created new 'Colour_Attributes.json' file for more
-   flexibility in theme customization in future updates
+  flexibility in theme customization in future updates
 - Fixed Multiplication Button
 - Fixed redundant texts in terminal/console
 
@@ -103,7 +117,6 @@
 - Optimised backend
 - Reduced Code
 - Fixed bugs
-
 
 ## [V1.4]
 
