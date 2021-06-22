@@ -1,4 +1,4 @@
-    updated: Tuesday, 9th March 2021
+    updated: Tuesday, 22nd June 2021
 
 <div align="center">
   <a href="https://warmachine028.github.io/Better-Calculator/">
@@ -8,7 +8,7 @@
     Aesthetic outside Stronger inside
   </p>
   <a href="https://warmachine028.github.io/Better-Calculator/">
-    <img src="https://img.shields.io/badge/version-V4.1-lawngreen" alt="Current Ver: V4.1">
+    <img src="https://img.shields.io/badge/version-V4.1.0-lawngreen" alt="Current Ver: V4.1.0">
   </a>
 </div>
 
@@ -111,9 +111,9 @@
 >
 > Press `H` button beside AOT button to view history.  
 > if log.txt is NULL the Labels will show: Not enough Data  
-> See the history of calculations in reverse order.  
->  
-> ![history](img/history.gif)  
+> See the history of calculations in reverse order.
+>
+> ![history](img/history.gif)
 
 ---
 
