@@ -1,6 +1,23 @@
 # CHANGELOG
 
-    Updated on: 9th March 2021
+    Updated on: 22nd June 2021
+
+## [V4.1.0]
+
+### _22nd March 2021_
+
+- Minor Update: Reduction & Restructuring of Code
+- Created new helper file _auxiliary.py_
+- Shifted 4 Functions into helper file: (see CHANGELOG: [auxiliary.py](../auxiliary.py))
+- Restructured functions in main.py
+  - imports
+  - functions
+  - body
+- Added 2 new functions:
+  - bconfigure(button, text, ro, col) -> Configures Button properties & packs
+  - sc_bconfigure(button, text, ro, col) -> Configures Scientific Button properties & packs
+- Replaced all toggle variables to BooleanVars for easy function access (no globals)
+- Replaced Trigonometry functions to lambda functions
 
 ## [V4.1]
 
