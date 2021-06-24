@@ -10,7 +10,6 @@ CHANGE LOG: Ver : 4.1
 >> Added new frame for showing history
 >> Added Error checking for NULL log files with : Not enough data
 >> Equal button `=` now flashes on pressing return key
-
 """
 
 import json
@@ -194,7 +193,6 @@ def return_on_hovering(event):
 # some Functions - Back_end
 # Function to execute Return Key in Screen (Entry Widget)
 def enter_click(event):
-    """Function to execute Return Key in Screen (Entry Widget)"""
     event.widget = equal_button
     equal_button.flash()
     click(event)

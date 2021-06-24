@@ -14,6 +14,7 @@ CHANGE LOG: Ver :4.1.0
 >> Replaced all toggle variables to BooleanVars
    for easy function access (no globals)
 >> Replaced Trigonometry functions to lambda functions
+>> COMPATIBLE WITH auxiliary VER: 0.0
 """
 
 import json
