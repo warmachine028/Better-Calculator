@@ -1,6 +1,20 @@
 # CHANGELOG
 
-    Updated on: 22nd June 2021
+    Updated on: 24th June 2021
+
+## [V4.1.1]
+
+### _24nd March 2021_
+
+- Minor Update: Reduction & Restructuring of Code
+- Fixed glitch: which let window reopen in centre
+  when history button is pressed
+- Shifted colors to class Colours in auxiliary.py
+- Shifted bconfigure() and sc_bconfigure() to auxiliary.py
+  as createbtn() and createscibtn()
+- Removed TypeError from click()
+- Reverted lambda functions to normal functions
+- COMPATIBLE WITH auxiliary VER: 0.1
 
 ## [V4.1.0]
 
