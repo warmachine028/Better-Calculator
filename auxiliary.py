@@ -11,6 +11,7 @@ CHANGE LOG: Ver :0.0
     - save(expression) -> To save history of calculations
     - geometry_(window) -> To set geometry and open root window at the center
     - modify(window, bg_colour) -> Function modifies root window
+COMPATIBLE WITH main VER: 4.1.0
 """
 
 import datetime
