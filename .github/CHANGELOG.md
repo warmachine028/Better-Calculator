@@ -18,6 +18,7 @@
   - sc_bconfigure(button, text, ro, col) -> Configures Scientific Button properties & packs
 - Replaced all toggle variables to BooleanVars for easy function access (no globals)
 - Replaced Trigonometry functions to lambda functions
+- COMPATIBLE WITH main VER: 4.1.0
 
 ## [V4.1]
 
