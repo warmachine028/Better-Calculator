@@ -1,10 +1,21 @@
 # CHANGELOG
 
-    Updated on: 24th June 2021
+    Updated on: 26th June 2021
+
+## [V4.1.2]
+
+### _26th March 2021_
+
+- Minor Update: Reduced Code and added Type Hinting
+- Removed redundant colour settings from every widget
+  instead used theme() function to reduce code
+- Added more list comprehensions to reduce
+- Optimised imports for faster execution
+- COMPATIBLE WITH auxiliary VER: 0.2
 
 ## [V4.1.1]
 
-### _24nd March 2021_
+### _24th March 2021_
 
 - Minor Update: Reduction & Restructuring of Code
 - Fixed glitch: which let window reopen in centre
@@ -32,7 +43,7 @@
   - sc_bconfigure(button, text, ro, col) -> Configures Scientific Button properties & packs
 - Replaced all toggle variables to BooleanVars for easy function access (no globals)
 - Replaced Trigonometry functions to lambda functions
-- COMPATIBLE WITH main VER: 4.1.0
+- COMPATIBLE WITH auxiliary VER: 0.0
 
 ## [V4.1]
 
