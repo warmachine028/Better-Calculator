@@ -1,28 +1,30 @@
 """
-CHANGE LOG: Ver :0.1
->> 24th June 2021
->> Major Update:
->> Added 2 functions
-    - def createbtn(parent, txt, ro, col) -> Button:
-        1. Creates buttons ,grids and returns them
-    - def createscibtn(parent, txt, ro, col) -> Button:
-        1. Creates scientific buttons, grids them and returns them
->> Added Colours Class to encapsulate colours
->> Added a feature to add '*' before parenthesis
-COMPATIBLE WITH main VER: 4.1.1
+CHANGE LOG: Ver: 0.2
+>> 26th June 2021
+>> Major Update: Added 1 function and Type Hinting
+>> Added 1 function
+    - def make_rad_btn(parent: Frame, txt: str, var: Variable,
+                       com: Callable, ro: int, col: int) -> Radiobutton:
+        1. Creates radio buttons, grids and returns them
+>> Renamed 2 functions:
+    - createbtn ->  make_btn
+    - createscibtn -> make_sc_btn
+    - removed redundant colour settings
+>> Removed geometry_() function and merged its functionality in modify()
+COMPATIBLE WITH main VER: 4.1.2
 """
 
 import datetime
 import json
 import math
-from tkinter import Button
+from tkinter import Button, Radiobutton, Variable, Frame, Tk
+from typing import Union, Callable
 
 
 class Colours:
     # Parsing Colours
     with open(r"data/themes.json", "r") as f:
         content = json.load(f)
-
     # Default -> 1st theme
     # Default Primary Values
     Default = content["Theme 1"]
@@ -58,8 +60,8 @@ class Colours:
 # 4. Adds forgotten 0 before decimal
 # 5. Adds forgotten * before parenthesis
 def replace_(expression: str) -> str:
-    original = ("×", "÷", "^", "π", "e", "sin⁻¹(", "cos⁻¹(", "tan⁻¹(", "!", "√")
-    replaced = ("*", "/", "**", str(math.pi), str(math.e), "asin(", "acos(", "atan(", "fact(", "sqrt(")
+    original: tuple[str, ...] = ("×", "÷", "^", "π", "e", "sin⁻¹(", "cos⁻¹(", "tan⁻¹(", "!", "√")
+    replaced: tuple[str, ...] = ("*", "/", "**", str(math.pi), str(math.e), "asin(", "acos(", "atan(", "fact(", "sqrt(")
 
     # Replacing visual elements with real elements
     for original_, replaced_ in zip(original, replaced):
@@ -71,9 +73,9 @@ def replace_(expression: str) -> str:
 
     # Removing redundant parenthesis
     while expression.count("(") < expression.count(")"):
-        expl = list(expression)
-        expl.remove(")")
-        expression = "".join(expl)
+        temp: list[str] = list(expression)
+        temp.remove(")")
+        expression = "".join(temp)
 
     # Adding 0 before decimal
     if "." in expression:
@@ -89,45 +91,41 @@ def replace_(expression: str) -> str:
 
 
 # Function to save history
-def save(expression):
-    today = datetime.date.today()
-    isd = f"DATE: {'-'.join(str(today).split('-')[::-1])}\n"
+def save(expression: str) -> None:
+    today: datetime.date = datetime.date.today()
+    c_date: str = f"DATE: {'-'.join(str(today).split('-')[::-1])}\n"
     with open("data/log.txt", "r+") as log_:
         try:
-            ldate = [date for date in log_.readlines() if date.startswith("DATE")][-1]
+            l_date: str = [date for date in log_.readlines() if date.startswith("DATE")][-1]
+            log_.write(expression if l_date == c_date else f"{c_date} {expression}")
         except IndexError:
-            ldate = False
-        log_.write(f"{expression}" if ldate == isd else f"{isd}{expression}")
-
-
-# Function sets geometry and opens root window at the center
-def geometry_(window):
-    width, height = 267, 500
-    x_cord = (window.winfo_screenwidth() - width) // 2
-    y_cord = (window.winfo_screenheight() - height) // 2
-    window.geometry(f"{width}x{height}+{x_cord}+{y_cord}")
+            pass
 
 
 # Function modifies root window
-def modify(window):
-    geometry_(window)
+def modify(window: Tk) -> None:
+    width, height = 267, 500
+    x_cord: int = (window.winfo_screenwidth() - width) // 2
+    y_cord: int = (window.winfo_screenheight() - height) // 2
+    window.geometry(f"{width}x{height}+{x_cord}+{y_cord}")
     window.wm_iconbitmap("icon/icon.ico")
     window.title("Better Calculator")
-    window.resizable(height=0, width=0)
-    window.configure(bg=Colours.bg_color)
+    window.resizable(False, False)
 
 
-def createbtn(parent, txt, ro, col) -> Button:
-    btn = Button(parent, text=txt, width=2, padx=6, font="ariel 25 bold", bd=0, bg=Colours.bg_color,
-                 fg=Colours.fg_color if col != 3 else Colours.aot_color,
-                 activebackground=Colours.fg_color if col != 3 else Colours.aot_color,
-                 activeforeground=Colours.bg_color, relief="groove", border=0)
+def make_btn(parent: Frame, txt: Union[int, str], ro: int, col: int) -> Button:
+    btn: Button = Button(parent, text=txt, width=2, padx=6, font="ariel 25 bold", bd=0, relief="groove", border=0)
     btn.grid(row=ro, column=col)
     return btn
 
 
-def createscibtn(parent, txt, ro, col) -> Button:
-    btn = Button(parent, text=txt, width=4, font="ariel 15", bd=1, bg=Colours.sci_bg, fg=Colours.sci_fg,
-                 activebackground=Colours.sci_bg, activeforeground=Colours.sci_fg)
+def make_sc_btn(parent: Frame, txt: str, ro: int, col: int) -> Button:
+    btn: Button = Button(parent, text=txt, width=4, font="ariel 15", bd=1)
+    btn.grid(row=ro, column=col)
+    return btn
+
+
+def make_rad_btn(parent: Frame, txt: str, var: Variable, com: Callable, ro: int, col: int) -> Radiobutton:
+    btn: Radiobutton = Radiobutton(parent, text=txt, variable=var, value=txt, cursor="hand2", command=com)
     btn.grid(row=ro, column=col)
     return btn
