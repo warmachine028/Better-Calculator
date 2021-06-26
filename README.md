@@ -1,4 +1,4 @@
-    updated: Thursday, 24th June 2021
+    updated: Saturday, 26th June 2021
 
 <div align="center">
   <a href="https://warmachine028.github.io/Better-Calculator/">
@@ -8,7 +8,7 @@
     Aesthetic outside Stronger inside
   </p>
   <a href="https://warmachine028.github.io/Better-Calculator/">
-    <img src="https://img.shields.io/badge/version-V4.1.1-lawngreen" alt="Current Ver: V4.1.1">
+    <img src="https://img.shields.io/badge/version-V4.1.2-lawngreen" alt="Current Ver: V4.1.2">
   </a>
 </div>
 
