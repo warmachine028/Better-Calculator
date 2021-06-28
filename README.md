@@ -32,7 +32,7 @@
 
 - This is my first Project in github.
 
-- Im trying to put all mu dedication into it.
+- Im trying to put all my dedication into it.
 
 - It's a wonderfully fully feature packed calculator.
 
