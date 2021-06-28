@@ -1,32 +1,33 @@
 """
-CHANGE LOG: Ver: 0.2
->> 26th June 2021
->> Major Update: Added 1 function and Type Hinting
->> Added 1 function
-    - def make_rad_btn(parent: Frame, txt: str, var: Variable,
-                       com: Callable, ro: int, col: int) -> Radiobutton:
-        1. Creates radio buttons, grids and returns them
->> Renamed 2 functions:
-    - createbtn ->  make_btn
-    - createscibtn -> make_sc_btn
-    - removed redundant colour settings
->> Removed geometry_() function and merged its functionality in modify()
-COMPATIBLE WITH main VER: 4.1.2
+CHANGE LOG: Ver: 1.0
+>> 28th June 2021
+>> Major Update: Addition of Clear History function
+>> Added 2 functions
+    - def his_clear(event: Any) -> None:
+        1. Handles History Clear events by deleting lines in 'log.txt' file
+        2. Displays Prompts and notifications using tkinter.messagebox
+    - def make_his_btn(parent: Frame, txt: str, ro: int, col: int) -> Button:
+        1. Creates history buttons, grids and returns them
+>> Added optional parameter "com" in 2 functions:
+    - make_btn
+    - make_sci_btn
+COMPATIBLE WITH main VER: 4.2
 """
 
 import datetime
 import json
 import math
 from tkinter import Button, Radiobutton, Variable, Frame, Tk
-from typing import Union, Callable
+from tkinter.messagebox import askyesno, showinfo
+from typing import Union, Callable, Any
 
 
 class Colours:
     # Parsing Colours
     with open(r"data/themes.json", "r") as f:
         content = json.load(f)
+
     # Default -> 1st theme
-    # Default Primary Values
     Default = content["Theme 1"]
     theme_name = Default["Theme Name"]
 
@@ -73,9 +74,9 @@ def replace_(expression: str) -> str:
 
     # Removing redundant parenthesis
     while expression.count("(") < expression.count(")"):
-        temp: list[str] = list(expression)
-        temp.remove(")")
-        expression = "".join(temp)
+        exp: list[str] = list(expression)
+        exp.remove(")")
+        expression = "".join(exp)
 
     # Adding 0 before decimal
     if "." in expression:
@@ -102,6 +103,38 @@ def save(expression: str) -> None:
             pass
 
 
+# Function to perform history Clear functions
+def his_clear(event: Any) -> None:
+    btn_txt: str = event.widget["text"]
+    if btn_txt == "CLEAR ALL":
+        if askyesno(btn_txt, "Are you sure, you want to delete everything?"):
+            with open("data/log.txt", "w"):
+                showinfo(btn_txt, "Your history is now clean as new")
+
+    elif btn_txt == "CLEAR LAST 10":
+        if askyesno(btn_txt, "You are about to delete last 10 records"):
+            with open("data/log.txt", "r") as log_:
+                lines: list[str] = log_.readlines()
+            with open("data/log.txt", "w") as log_:
+                log_.writelines(lines[:len(lines) - 10])
+            showinfo(btn_txt, "Last 10 Records Cleared ")
+    else:
+        with open("data/log.txt", "r") as log_:
+            lines = log_.readlines()
+        if len(lines):  # Will not delete if length < 1
+            l_date = [line for line in lines[::-1] if line.startswith("DATE")][0].strip("DATE: ")
+            if askyesno(btn_txt, f"You are about to delete records of {l_date}"):
+                for line in lines[::-1]:
+                    lines.remove(line)
+                    if line.startswith("DATE"):
+                        break
+                with open("data/log.txt", "w") as log_:
+                    log_.writelines(lines)
+                showinfo(btn_txt, "Records Cleaned successfully")
+        else:
+            showinfo(btn_txt, "You have no data")
+
+
 # Function modifies root window
 def modify(window: Tk) -> None:
     width, height = 267, 500
@@ -113,19 +146,25 @@ def modify(window: Tk) -> None:
     window.resizable(False, False)
 
 
-def make_btn(parent: Frame, txt: Union[int, str], ro: int, col: int) -> Button:
-    btn: Button = Button(parent, text=txt, width=2, padx=6, font="ariel 25 bold", bd=0, relief="groove", border=0)
+def make_btn(parent: Frame, txt: Union[int, str], ro: int, col: int, com=None) -> Button:
+    btn: Button = Button(parent, text=txt, width=2, padx=6, font="ariel 25 bold", bd=0, relief="groove", command=com)
     btn.grid(row=ro, column=col)
     return btn
 
 
-def make_sc_btn(parent: Frame, txt: str, ro: int, col: int) -> Button:
-    btn: Button = Button(parent, text=txt, width=4, font="ariel 15", bd=1)
+def make_sc_btn(parent: Frame, txt: str, ro: int, col: int, com=None) -> Button:
+    btn: Button = Button(parent, text=txt, width=4, font="ariel 15", bd=1, command=com)
     btn.grid(row=ro, column=col)
     return btn
 
 
 def make_rad_btn(parent: Frame, txt: str, var: Variable, com: Callable, ro: int, col: int) -> Radiobutton:
     btn: Radiobutton = Radiobutton(parent, text=txt, variable=var, value=txt, cursor="hand2", command=com)
+    btn.grid(row=ro, column=col)
+    return btn
+
+
+def make_his_btn(parent: Frame, txt: str, ro: int, col: int) -> Button:
+    btn: Button = Button(parent, text=txt, width=15, height=1, font="ariel 11", pady=4, bd=0)
     btn.grid(row=ro, column=col)
     return btn
