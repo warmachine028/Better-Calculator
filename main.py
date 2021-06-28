@@ -7,7 +7,7 @@ CHANGE LOG: Ver :4.2.0
     - CLEAR LAST 10 -> deletes last 10 lines of log.txt
     - CLEAR LAST DAY -> deletes records of last date
 >> Added message box prompts for confirmations before deleting
->> Added message box showingfo to notify after successful deletion
+>> Added message box showinfo to notify after successful deletion
 >> Fixed Frame Glitch:
     - History Frame overlaps Scientific Frame
 >> Renamed few variables according to PEP8 Naming Conventions
@@ -180,7 +180,7 @@ def history() -> None:
 
 # Packing labels to label_frame
 def show() -> None:
-    global lno, lines
+    global line_number, lines
     with open("data/log.txt", "r") as _:
         lines = [line.strip() for line in _.readlines() if not line.startswith("DATE")][::-1]
         lines.append("_________________________________________________________")
@@ -202,7 +202,7 @@ def show() -> None:
 
 # To scroll Down and up
 def scroll(event: Any) -> None:
-    global lno
+    global line_number
     line_number += 1 if event.delta < 0 else -1
     if line_number + 5 > len(lines):
         line_number = -4
@@ -393,7 +393,7 @@ screen_frame.pack(padx=0, pady=0, side="top")
 ##################################################################################################################
 
 # History Properties
-lno = -2
+line_number = -2
 
 # Boolean Variables
 his_toggle = BooleanVar()
