@@ -1,17 +1,39 @@
 # CHANGELOG
 
-    Updated on: 26th June 2021
+    Updated on: 28th June 2021
+
+## [V4.2.0]
+
+### _28th March 2021_
+
+- Major Update: Addition of History Clear functionalities
+- Added 3 Buttons in History Frame
+  - CLEAR ALL -> deletes all contents of log.txt
+  - CLEAR LAST 10 -> deletes last 10 lines of log.txt
+  - CLEAR LAST DAY -> deletes records of last date
+- Added message box prompts for confirmations before deleting
+- Added message box showingfo to notify after successful deletion
+- Fixed Frame Glitch:
+  - History Frame overlaps Scientific Frame
+- Renamed few variables according to PEP8 Naming Conventions
+- Reduced code by modifying calculate_sc()
+- SEE CHANGELOG [auxiliary.py](..\versions\auxiliary%20V1.0.py)
+- _COMPATIBLE WITH auxiliary VER: 1.0_
 
 ## [V4.1.2]
 
 ### _26th March 2021_
 
 - Minor Update: Reduced Code and added Type Hinting
-- Removed redundant colour settings from every widget
+- Removed redundant color settings from every widget
   instead used theme() function to reduce code
 - Added more list comprehensions to reduce
-- Optimised imports for faster execution
-- COMPATIBLE WITH auxiliary VER: 0.2
+- Optimized imports for faster execution
+
+- Known Bugs:
+  - History Frames Overlap Scientific Frame
+- SEE CHANGELOG [auxiliary.py](..\versions\auxiliary%20V0.2.py)
+- _COMPATIBLE WITH auxiliary VER: 0.2_
 
 ## [V4.1.1]
 
@@ -25,7 +47,8 @@
   as createbtn() and createscibtn()
 - Removed TypeError from click()
 - Reverted lambda functions to normal functions
-- COMPATIBLE WITH auxiliary VER: 0.1
+- SEE CHANGELOG [auxiliary.py](..\versions\auxiliary%20V0.1.py)
+- _COMPATIBLE WITH auxiliary VER: 0.1_
 
 ## [V4.1.0]
 
@@ -33,7 +56,7 @@
 
 - Minor Update: Reduction & Restructuring of Code
 - Created new helper file _auxiliary.py_
-- Shifted 4 Functions into helper file: (see CHANGELOG: [auxiliary.py](../auxiliary.py))
+- Shifted 4 Functions into helper file: (see CHANGELOG: [auxiliary.py](..\auxiliary.py)
 - Restructured functions in main.py
   - imports
   - functions
@@ -43,7 +66,8 @@
   - sc_bconfigure(button, text, ro, col) -> Configures Scientific Button properties & packs
 - Replaced all toggle variables to BooleanVars for easy function access (no globals)
 - Replaced Trigonometry functions to lambda functions
-- COMPATIBLE WITH auxiliary VER: 0.0
+- SEE CHANGELOG [auxiliary.py](..\versions\auxiliary%20V0.0.py)
+- _COMPATIBLE WITH auxiliary VER: 0.0_
 
 ## [V4.1]
 
