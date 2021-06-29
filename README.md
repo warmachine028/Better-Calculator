@@ -32,11 +32,11 @@
 
 - This is my first Project in github.
 
-- Im trying to put all my dedication into it.
+- I'm trying to put all my dedication into it.
 
-- It's a wonderfully fully feature packed calculator.
+- It's a fully feature packed calculator.
 
-- This is a completely new concept.
+- A completely new concept.
 
 - Please contribute to it and show me how to imporve my github skills.
 
@@ -48,7 +48,7 @@
 
 > ### 1. Requirements
 >
-> 1. [python 3.x](https://cutt.ly/PjeYrSt)
+> 1. [python 3.x](https://bit.ly/3w6DmZQ)
 > 2. [7zip](https://www.7-zip.org)
 > 3. Pillow Module. If not installed use command `pip install pillow` in terminal
 >
