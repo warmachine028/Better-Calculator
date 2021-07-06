@@ -1,4 +1,4 @@
-    updated: Monday, 28th June 2021
+    updated: Monday, 6th June 2021
 
 <div align="center">
   <a href="https://warmachine028.github.io/Better-Calculator/">
@@ -23,6 +23,7 @@
 - [Customizations](#customizations)
 - [Acknowlegement](#acknowlegement)
 - [Previews](#previews)
+- [License](#License)
 
 ---
 
@@ -31,15 +32,10 @@
 ## Introduction
 
 - This is my first Project in github.
-
 - I'm trying to put all my dedication into it.
-
 - It's a fully feature packed calculator.
-
 - A completely new concept.
-
 - Please contribute to it and show me how to imporve my github skills.
-
 - Find issues and suggest changes.
 
 ---
@@ -174,26 +170,9 @@
 - The pandemic was very booring and monotonic so I thought of making something which is necessary and fulfils the following criterias :-
 
   1. Useful
-
   2. Easy to use
-
   3. Minimalistic UX design
-
   4. Uses some GUI framework
-
-- The calculators already available online had the following shortcommings according to my study on calculator applications :-
-
-  1. Complex to use
-
-  2. Had a very basic design
-
-  3. Had no themes
-
-  4. Had no special features
-
-  5. Had no have Scientific mode
-
-  6. Was not so user friendly
 
 - Also those days I could'nt find an appropriate calculator application online which suited my choice and designs.
 
@@ -206,3 +185,9 @@
 | ![dark](img/screen-calculator-dark.png) | ![normal](img/screen-calculator.png) |
 |            **Midnight City**            |                                      |
 |     ![midc](img/midnight-city.jpg)      |                                      |
+
+## License
+
+- see [LICENSE](LICENSE)
+
+**Kryptonite, 2021**
