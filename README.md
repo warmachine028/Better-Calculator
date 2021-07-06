@@ -1,5 +1,17 @@
     updated: Tuesday, 6th July 2021
 
+<!-- <div align="center">
+  <a href="https://github.com/warmachine028/Better-Calculator">
+    <img width=200 src="Images/calcico.png" alt="Better Calculator">
+  </a>
+  <p style="font-family: helvetica, calibri; font-size:12pt; font-style:italic">
+    A better and refined alternative
+  </p>
+  <a href="https://github.com/warmachine028/Better-Calculator">
+    <img src="https://img.shields.io/badge/version-V3.3-lawngreen" alt="Current Ver: V3.3">
+  </a>
+</div> -->
+
 <div align="center">
   <a href=https://warmachine028.github.io/Better-Calculator>
     <img width=200 src=icon/icon.png alt="Better Calculator">
@@ -10,12 +22,13 @@
   <a href=https://github.com/warmachine028/Better-Calculator/releases>
     <img src=https://img.shields.io/github/v/release/warmachine028/Better-Calculator>
   </a>
-
-![GitHub Repo stars](https://img.shields.io/github/stars/warmachine028/Better-Calculator?color=lawngreen)
-![GitHub](https://img.shields.io/github/license/warmachine028/Better-Calculator?color=orange)
-![GitHub forks](https://img.shields.io/github/forks/warmachine028/Better-Calculator?color=cyan)
-
 </div>
+
+<!-- ![GitHub Repo stars](https://img.shields.io/github/stars/warmachine028/Better-Calculator?color=lawngreen)
+![GitHub](https://img.shields.io/github/license/warmachine028/Better-Calculator?color=orange)
+![GitHub forks](https://img.shields.io/github/forks/warmachine028/Better-Calculator?color=cyan) -->
+
+
 
 # [Better Calculator](https://github.com/warmachine028/Better-Calculator)
 
