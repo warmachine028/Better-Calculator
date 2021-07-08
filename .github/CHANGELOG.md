@@ -1,10 +1,10 @@
 # CHANGELOG
 
-    Updated on: 28th June 2021
+    Updated on: 8th July 2021
 
 ## [V4.2.0]
 
-### _28th March 2021_
+### _28th June 2021_
 
 - Major Update: Addition of History Clear functionalities
 - Added 3 Buttons in History Frame
@@ -22,7 +22,7 @@
 
 ## [V4.1.2]
 
-### _26th March 2021_
+### _26th June 2021_
 
 - Minor Update: Reduced Code and added Type Hinting
 - Removed redundant color settings from every widget
@@ -37,7 +37,7 @@
 
 ## [V4.1.1]
 
-### _24th March 2021_
+### _24th June 2021_
 
 - Minor Update: Reduction & Restructuring of Code
 - Fixed glitch: which let window reopen in centre
