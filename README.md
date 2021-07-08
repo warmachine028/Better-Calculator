@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://warmachine028.github.io/Better-Calculator/">
-    <img width=200 src=icon/icon.png alt="Better Calculator">
+    <img width=200 src="icon/icon.png" alt="Better Calculator">
   </a>
   <p style="font-family: roboto, calibri; font-size:12pt; font-style:italic">
     Aesthetic outside Stronger inside
