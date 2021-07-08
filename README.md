@@ -1,16 +1,16 @@
     updated: Tuesday, 6th July 2021
 
 <div align="center">
-  <a href="https://warmachine028.github.io/Better-Calculator/"><img width=200 src="icon/icon.png" alt="Better Calculator"> </a>
-  <p style="font-family: roboto, calibri; font-size:12pt; font-style:italic"> Aesthetic outside Stronger inside </p>
-  <a> <img src="https://img.shields.io/github/v/release/warmachine028/Better-Calculator"> </a>   
+    <a href="https://warmachine028.github.io/Better-Calculator"><img width=200 src="icon/icon.png" alt="Better Calculator"></a>
+    <p style="font-family: roboto, calibri; font-size:12pt; font-style:italic"> Aesthetic outside Stronger inside </p>
+    <a> <img src="https://img.shields.io/github/v/release/warmachine028/Better-Calculator"></a>   
     <br>
-  <a> <img src="https://img.shields.io/github/stars/warmachine028/Better-Calculator?color=lawngreen"> </a>  
-  <a> <img src="https://img.shields.io/github/license/warmachine028/Better-Calculator?color=orange"> </a>  
-  <a href="https://github.com/warmachine028/Better-Calculator/releases"><img src="https://img.shields.io/github/forks/warmachine028/Better-Calculator?color=cyan"> </a>  
+    <a> <img src="https://img.shields.io/github/stars/warmachine028/Better-Calculator?color=lawngreen"></a> 
+    <a> <img src="https://img.shields.io/github/license/warmachine028/Better-Calculator?color=orange"></a>  
+    <a> <img src="https://img.shields.io/github/forks/warmachine028/Better-Calculator?color=cyan"></a>  
 </div>
     
- 
+
 # [Better Calculator](https://github.com/warmachine028/Better-Calculator)
 
 ## Table of Contents
@@ -179,5 +179,6 @@ $ git clone https://github.com/warmachine028/Better-Calculator
 <!-- Links  -->
 
 [releases]: https://github.com/warmachine028/Better-Calculator/releases
+[item]: "https://warmachine028.github.io/Better-Calculator/" 
 [python 3.x]: https://www.python.org/downloads/release/python-396/
 [pil]: https://pypi.org/project/Pillow
