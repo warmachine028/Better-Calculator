@@ -72,9 +72,8 @@ $ git clone https://github.com/warmachine028/Better-Calculator
 2. Try the latest [BETA release].
 3. Clone this Repo to contribute by following these [steps](#getting-started).
 4. To customize your theme, see: [themes.json].
-5. View [CHANGELOG] for detailed updates and issues .
-6. Old versions archived in [versions] folder:
-   ![versions](images/versions.jpg)
+5. View [CHANGELOG] for detailed updates and issues.
+6. Old versions archived in [versions] folder.
 
 ---
 
@@ -186,7 +185,7 @@ $ git clone https://github.com/warmachine028/Better-Calculator
 
 - see [LICENSE]
 
----
+##
 
 **Pritam, 2021**
 
