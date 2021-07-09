@@ -185,8 +185,10 @@ $ git clone https://github.com/warmachine028/Better-Calculator
 ## License
 
 - see [LICENSE]
-  <br>  
-  **Pritam, 2021**
+
+---
+
+**Pritam, 2021**
 
 <!-- Links  -->
 
