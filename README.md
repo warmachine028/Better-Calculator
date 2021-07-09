@@ -1,17 +1,23 @@
-    updated: Thursday, 8th July 2021
+    updated: Friday, 9th July 2021
 
 <div align=center>
-    <a href="https://warmachine028.github.io/Better-Calculator"><img width=200 src="icon/icon.png" alt="Better Calculator"></a>
+    <a href="https://warmachine028.github.io/Better-Calculator"><img width=200 src="images/icon2.png" alt="Better Calculator"></a>
     <p style="font-family: roboto, calibri; font-size:12pt; font-style:italic"> Aesthetic outside Stronger inside </p>
-    <a href="https://github.com/warmachine028/Better-Calculator/releases/"> <img src="https://img.shields.io/github/v/release/warmachine028/Better-Calculator"></a>   
+    <a href="https://github.com/warmachine028/Better-Calculator/releases/"> <img src="https://img.shields.io/github/v/release/warmachine028/Better-Calculator"></a>
     <br>
     <a> <img src="https://img.shields.io/github/stars/warmachine028/Better-Calculator?color=lawngreen"></a>
     <a href= "https://github.com/warmachine028/Better-Calculator/blob/main/LICENSE"><img src="https://img.shields.io/github/license/warmachine028/Better-Calculator?color=orange"></a>
     <a href="https://github.com/warmachine028/Better-Calculator/network/members"><img src="https://img.shields.io/github/forks/warmachine028/Better-Calculator?color=cyan"></a>
 </div>
-    
 
 # [Better Calculator](https://github.com/warmachine028/Better-Calculator)
+
+## Whats new?
+
+- Added a new icon in README
+- Addition of Clear History Feature
+- Added 3 buttons to delete history
+- Fixed Frames Overlap Scientific Frame
 
 ## Table of Contents
 
@@ -44,8 +50,9 @@
 ### Requirements
 
 - [python 3.x] - Python 3 and above
-- [PIL] for dealing with icons. If not installed 
-```sh 
+- [PIL] for dealing with icons. If not installed
+
+```sh
 $ pip install pillow
 ```
 
@@ -62,59 +69,60 @@ $ git clone https://github.com/warmachine028/Better-Calculator
 ## Usage
 
 1. Download the Latest Stable release from [releases].
-2. Try the ['BETA release'](main.py) by following these [steps](###2.-downloading) .
-3. To customize your theme, see: [data/themes.json](data/themes.json) .
-4. View [CHANGELOG](.github/CHANGELOG.md) for detailed updates and issues .
-5. Old versions archived in ['/versions'](versions) folder:
-   ![versions](img/screen-versions.png)
+2. Try the latest [BETA release].
+3. Clone this Repo to contribute by following these [steps](#getting-started).
+4. To customize your theme, see: [themes.json].
+5. View [CHANGELOG] for detailed updates and issues .
+6. Old versions archived in [versions] folder:
+   ![versions](images/versions.jpg)
 
 ---
 
 ## How to
 
-> ### 1. use AOT feature
+> ### 1. <u> Use AOT feature </u>
 >
+> AOT: Always On Top feature  
 > Press the icon beside the label `Calculator`  
-> AOT: Always On Top feature
 > `AOT ACTIVE`: colour of the label changes and becomes italic  
-> `AOT INACTIVE`: colour of label reverts and becomes normal  
+> `AOT INACTIVE`: colour of label reverts and becomes normal
 >
-> ![aot](img/AOT.gif)
+> ![aot](images/AOT.gif)
 
 ---
 
-> ### 2. use Scientific Mode
+> ### 2. <u> Use Scientific Mode </u>
 >
 > Press the `=` button below Entry widget to open scientific menu  
 > To activate inverse Trigonometric Functions press `INV`  
-> To use _factorial function_ press `!` first and then enter the input.
+> **To use <u> factorial function</u> press `!` first and then enter the input.**
 >
-> ![sci-mode](img/scientific_mode.gif)
+> ![sci-mode](images/scimode.gif)
 
 ---
 
-> ### 3. use History Feature
+> ### 3. <u> Use History Feature </u>
 >
 > Press `H` button beside AOT button to view history.  
 > if log.txt is NULL the Labels will show: Not enough Data  
 > See the history of calculations in reverse order.
 >
-> ![history](img/history.gif)
+> ![history](images/history.gif)
 
 ---
 
-> ### 4. set a Custom theme
+> ### 4. <u> Set a Custom theme </u>
 >
 > Open _data/themes.json_  
 > Rename `Theme 1` / `Theme 2` to the required themes
 >
-> ![changing-theme](img/setting_themes.gif)
+> ![changing-theme](images/themeset.gif)
 
 ---
 
 ## Customizations
 
-![Customizations](img/customization.gif)
+![Customizations](images/custom.gif)
 
 - Common attributes
 
@@ -168,21 +176,26 @@ $ git clone https://github.com/warmachine028/Better-Calculator
 
 ## Previews
 
-|             **Super Dark**              |           **Aurora Light**           |
-| :-------------------------------------: | :----------------------------------: |
-| ![dark](img/screen-calculator-dark.png) | ![normal](img/screen-calculator.png) |
-|            **Midnight City**            |                                      |
-|     ![midc](img/midnight-city.jpg)      |                                      |
+|               **Super Dark**               |            **Aurora Light**            |
+| :----------------------------------------: | :------------------------------------: |
+| ![dark](images/screen-calculator-dark.png) | ![light](images/screen-calculator.png) |
+|             **Midnight City**              |            **COMMING SOON**            |
+| ![midnight-city](images/midnight-city.jpg) |                                        |
 
 ## License
 
-- see [LICENSE](LICENSE)
-
-**Kryptonite, 2021**
+- see [LICENSE]
+  <br>  
+  **Pritam, 2021**
 
 <!-- Links  -->
 
+[license]: https://github.com/warmachine028/Better-Calculator/blob/main/.github/LICENSE
 [releases]: https://github.com/warmachine028/Better-Calculator/releases
-[website]: "https://warmachine028.github.io/Better-Calculator/" 
+[website]: "https://warmachine028.github.io/Better-Calculator/"
 [python 3.x]: https://www.python.org/downloads/release/python-396/
 [pil]: https://pypi.org/project/Pillow
+[beta release]: https://github.com/warmachine028/Better-Calculator/releases/tag/V4.1.2-beta
+[themes.json]: https://github.com/warmachine028/Better-Calculator/blob/main/data/themes.json
+[changelog]: https://github.com/warmachine028/Better-Calculator/blob/main/.github/CHANGELOG.md
+[versions]: https://github.com/warmachine028/Better-Calculator/blob/main/data/versions
