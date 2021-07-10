@@ -191,7 +191,7 @@ $ git clone https://github.com/warmachine028/Better-Calculator
 
 <!-- Links  -->
 
-[license]: https://github.com/warmachine028/Better-Calculator/blob/main/.github/LICENSE
+[license]: https://github.com/warmachine028/Better-Calculator/blob/main/LICENSE
 [releases]: https://github.com/warmachine028/Better-Calculator/releases
 [website]: "https://warmachine028.github.io/Better-Calculator/"
 [python 3.x]: https://www.python.org/downloads/release/python-396/
