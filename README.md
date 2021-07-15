@@ -210,7 +210,7 @@ $ git clone https://github.com/warmachine028/Better-Calculator
 [website]: "https://warmachine028.github.io/Better-Calculator/"
 [python 3.x]: https://www.python.org/downloads/release/python-396/
 [pil]: https://pypi.org/project/Pillow
-[beta release]: https://github.com/warmachine028/Better-Calculator/releases/tag/V4.1.2-beta
+[beta release]: https://github.com/warmachine028/Better-Calculator/releases/tag/V4.2.1-beta
 [themes.json]: https://github.com/warmachine028/Better-Calculator/blob/main/data/themes.json
 [changelog]: https://github.com/warmachine028/Better-Calculator/blob/main/.github/CHANGELOG.md
 [versions]: https://github.com/warmachine028/Better-Calculator/blob/main/data/versions
