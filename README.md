@@ -36,11 +36,11 @@
 
 ## Introduction
 
-- This is my first Project in github.
+- This is my first Project in GitHub.
 - I'm trying to put all my dedication into it.
-- It's a fully feature packed calculator.
+- It's a full feature packed calculator.
 - A completely new concept.
-- Please contribute to it and show me how to imporve my github skills.
+- Please contribute to it and show me how to improve my GitHub skills.
 - Find issues and suggest changes.
 
 ---

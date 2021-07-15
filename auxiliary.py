@@ -1,17 +1,14 @@
 """
-CHANGE LOG: Ver: 1.0
->> 28th June 2021
->> Major Update: Addition of Clear History function
->> Added 2 functions
-    - def his_clear(event: Any) -> None:
-        1. Handles History Clear events by deleting lines in 'log.txt' file
-        2. Displays Prompts and notifications using tkinter.messagebox
-    - def make_his_btn(parent: Frame, txt: str, ro: int, col: int) -> Button:
-        1. Creates history buttons, grids and returns them
->> Added optional parameter "com" in 2 functions:
-    - make_btn
-    - make_sci_btn
-COMPATIBLE WITH main VER: 4.2
+CHANGE LOF: Ver: 1.1
+>> 15th July 2021
+>> Minor update: Shifting of few functions
+>> Added a Class
+    - BooleanVar
+>> Added 3 functions
+    - def change_on_hovering(event: Any) -> None:
+    - def return_on_hovering(event: Any) -> None:
+    - def aot(root, label) -> None:
+COMPATIBLE WITH main VER: 4.2.1
 """
 
 import datetime
@@ -20,6 +17,17 @@ import math
 from tkinter import Button, Radiobutton, Variable, Frame, Tk
 from tkinter.messagebox import askyesno, showinfo
 from typing import Union, Callable, Any
+
+
+class BooleanVar:
+    def __init__(self, value=False):
+        self.value = value
+
+    def get(self):
+        return self.value
+
+    def set(self, value):
+        self.value = value
 
 
 class Colours:
@@ -168,3 +176,41 @@ def make_his_btn(parent: Frame, txt: str, ro: int, col: int) -> Button:
     btn: Button = Button(parent, text=txt, width=15, height=1, font="ariel 11", pady=4, bd=0)
     btn.grid(row=ro, column=col)
     return btn
+
+
+# Function changes color of widgets hovering
+def change_on_hovering(event: Any) -> None:
+    colour: str = Colours.hover
+    if event.widget.winfo_parent() in (".!frame6.!frame", ".!frame6.!frame2", ".!frame6.!frame3"):
+        if event.widget["text"] == "INV":
+            colour = Colours.sci_hover_inverse if inv_toggle.get() else Colours.sci_hover
+        else:
+            colour = Colours.sci_hover
+    event.widget["bg"] = colour
+
+
+# Function returns to normal color when not hovering
+def return_on_hovering(event: Any) -> None:
+    colour: str = Colours.bg_color
+    if event.widget.winfo_parent() in (".!frame6.!frame", ".!frame6.!frame2", ".!frame6.!frame3"):
+        if event.widget["text"] == "INV":
+            colour = Colours.inv_color if inv_toggle.get() else Colours.sci_bg
+        else:
+            colour = Colours.sci_bg
+    event.widget["bg"] = colour
+
+
+# To Keep window always on top
+def aot(root, label) -> None:
+    if aot_.get():
+        root.attributes("-topmost", False)
+        label.config(fg=Colours.fg_color, font="Verdana 13")
+        aot_.set(False)
+    else:
+        root.attributes("-topmost", True)
+        label.config(fg=Colours.aot_color, font="Verdana 12 italic")
+        aot_.set(True)
+
+
+inv_toggle = BooleanVar()
+aot_ = BooleanVar()

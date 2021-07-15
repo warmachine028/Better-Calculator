@@ -1,43 +1,28 @@
 """
-CHANGE LOG: Ver :4.2.0
->> 28th June 2021
->> Major Update: Addition of History Clear functionalities
->> Added 3 Buttons in History Frame
-    - CLEAR ALL -> deletes all contents of log.txt
-    - CLEAR LAST 10 -> deletes last 10 lines of log.txt
-    - CLEAR LAST DAY -> deletes records of last date
->> Added message box prompts for confirmations before deleting
->> Added message box showinfo to notify after successful deletion
->> Fixed Frame Glitch:
-    - History Frame overlaps Scientific Frame
->> Renamed few variables according to PEP8 Naming Conventions
->> Reduced code by modifying calculate_sc()
-COMPATIBLE WITH auxiliary VER: 0.3
+CHANGE LOG: Ver :4.2.1
+>> 15th July 2021
+>> Minor Update: Restructure and reduction of code
+>> Added a new BooleanVar Class in auxiliary.py
+    to handle global booleans
+>> Shifted return_on_hovering(), change_on_hovering(), aot() to auxiliary.py
+>> Changed all configure() to coonfig()
+>> Inverted all if-else in toggle functions
+COMPATIBLE WITH auxiliary VER: 1.1
+
 """
 
 import math
-from tkinter import BooleanVar, StringVar
+from tkinter import StringVar
 from tkinter import Tk, Label, Button, Frame, Entry
 from typing import Iterator, Union, Any
 
 from PIL import Image, ImageTk  # type: ignore
 
 from auxiliary import Colours as Col
+from auxiliary import aot_, inv_toggle, BooleanVar
 from auxiliary import make_rad_btn, make_btn, make_sc_btn, make_his_btn
-from auxiliary import replace_, modify, save, his_clear
-
-
-# To Keep window always on top
-def aot() -> None:
-    if not aot_.get():
-        root.attributes("-topmost", True)
-        label.configure(fg=Col.aot_color, font="Verdana 12 italic")
-        aot_.set(True)
-
-    else:
-        root.attributes("-topmost", False)
-        label.configure(fg=Col.fg_color, font="Verdana 13")
-        aot_.set(False)
+from auxiliary import replace_, modify, save, his_clear, aot
+from auxiliary import return_on_hovering, change_on_hovering
 
 
 # Function Changes theme colors radio button input
@@ -72,52 +57,30 @@ def theme(_theme: dict[str, dict] = Col.content["Theme 1"]) -> None:
 
 # Function to apply changed colors
 def change() -> None:
-    label.configure(bg=Col.bg_color, fg=Col.aot_color if aot_.get() else Col.fg_color)
-    label0.configure(bg=Col.bg_color, fg=Col.fg_color, activebackground=Col.bg_color)
+    label.config(bg=Col.bg_color, fg=Col.aot_color if aot_.get() else Col.fg_color)
+    label0.config(bg=Col.bg_color, fg=Col.fg_color, activebackground=Col.bg_color)
 
-    [_.configure(bg=Col.bg_color) for _ in (root, main_frame, screen_frame, his_frame, label_frame, sci_frame)]
-    screen.configure(bg=Col.scrn_bg, fg=Col.scrn_fg, selectbackground=Col.scrn_sb,
-                     selectforeground=Col.scrn_sf, insertbackground=Col.scrn_cur)
+    [_.config(bg=Col.bg_color) for _ in (root, main_frame, screen_frame, his_frame, label_frame, sci_frame)]
+    screen.config(bg=Col.scrn_bg, fg=Col.scrn_fg, selectbackground=Col.scrn_sb,
+                  selectforeground=Col.scrn_sf, insertbackground=Col.scrn_cur)
 
-    mid_button.configure(bg=Col.bg_color, fg=Col.fg_color, activebackground=Col.bg_color, activeforeground=Col.fg_color)
+    mid_button.config(bg=Col.bg_color, fg=Col.fg_color, activebackground=Col.bg_color, activeforeground=Col.fg_color)
 
     for _ in sci_list + sci_list2 + inverted_list:
-        _.configure(bg=Col.sci_bg, fg=Col.sci_fg, activebackground=Col.sci_bg, activeforeground=Col.sci_fg)
+        _.config(bg=Col.sci_bg, fg=Col.sci_fg, activebackground=Col.sci_bg, activeforeground=Col.sci_fg)
 
     inv_color = Col.inv_color if inv_toggle.get() else Col.sci_bg
-    inverse_button.configure(bg=inv_color, fg=Col.sci_fg, activebackground=inv_color, activeforeground=Col.sci_fg)
+    inverse_button.config(bg=inv_color, fg=Col.sci_fg, activebackground=inv_color, activeforeground=Col.sci_fg)
 
     for _ in radio_list:
-        _.configure(bg=Col.bg_color, fg=Col.radio_fg, activebackground=Col.bg_color,
-                    activeforeground=Col.fg_color, selectcolor=Col.radio_color)
+        _.config(bg=Col.bg_color, fg=Col.radio_fg, activebackground=Col.bg_color,
+                 activeforeground=Col.fg_color, selectcolor=Col.radio_color)
 
     for _ in (*widget_list0, *hi_widget_list, all_clear):
-        _.configure(bg=Col.bg_color, fg=Col.fg_color, activebackground=Col.fg_color, activeforeground=Col.bg_color)
+        _.config(bg=Col.bg_color, fg=Col.fg_color, activebackground=Col.fg_color, activeforeground=Col.bg_color)
 
     for _ in widget_list1 + his_btn_lst:
-        _.configure(bg=Col.bg_color, fg=Col.aot_color, activebackground=Col.aot_color, activeforeground=Col.bg_color)
-
-
-# Function changes color of widgets hovering
-def change_on_hovering(event: Any) -> None:
-    colour: str = Col.hover
-    if event.widget.winfo_parent() in (".!frame6.!frame", ".!frame6.!frame2", ".!frame6.!frame3"):
-        if event.widget["text"] == "INV":
-            colour = Col.sci_hover_inverse if inv_toggle.get() else Col.sci_hover
-        else:
-            colour = Col.sci_hover
-    event.widget["bg"] = colour
-
-
-# Function returns to normal color when not hovering
-def return_on_hovering(event: Any) -> None:
-    colour: str = Col.bg_color
-    if event.widget.winfo_parent() in (".!frame6.!frame", ".!frame6.!frame2", ".!frame6.!frame3"):
-        if event.widget["text"] == "INV":
-            colour = Col.inv_color if inv_toggle.get() else Col.sci_bg
-        else:
-            colour = Col.sci_bg
-    event.widget["bg"] = colour
+        _.config(bg=Col.bg_color, fg=Col.aot_color, activebackground=Col.aot_color, activeforeground=Col.bg_color)
 
 
 # Function to execute Return Key in Screen (Entry Widget)
@@ -156,7 +119,12 @@ def click(event: Any) -> None:
 # Packs Frame to the root window
 def history() -> None:
     width, height = 267, 500
-    if not his_toggle.get():  # To toggle On
+    if his_toggle.get():  # To toggle Off
+        root.geometry(f'{width}x{height}+{root.winfo_x() + 132}+{root.winfo_y()}')
+        his_frame.pack_forget()
+        his_toggle.set(False)
+
+    else:  # To toggle On
         root.geometry(f"{width * 2 + 6}x{height}+{root.winfo_x() - 132}+{root.winfo_y()}")
         screen_frame.pack_forget()
         sci_frame.pack_forget()
@@ -172,25 +140,21 @@ def history() -> None:
         mid_frame.pack()
         his_toggle.set(True)
 
-    else:  # To toggle Off
-        root.geometry(f'{width}x{height}+{root.winfo_x() + 132}+{root.winfo_y()}')
-        his_frame.pack_forget()
-        his_toggle.set(False)
-
 
 # Packing labels to label_frame
 def show() -> None:
-    global line_number, lines
+    global line_number
     with open("data/log.txt", "r") as _:
-        lines = [line.strip() for line in _.readlines() if not line.startswith("DATE")][::-1]
-        lines.append("_________________________________________________________")
+        lines.clear()
+        lines.extend([line.strip() for line in _.readlines() if not line.startswith("DATE")][::-1])
+        lines.append("_" * 60)
 
     for i in range(line_number, line_number + 5):
         _ = Label(label_frame, bg=Col.bg_color, fg=Col.fg_color, height=0 if i else 3, width=260)
         try:
-            _.configure(text=lines[i])
+            _.config(text=lines[i])
         except IndexError:
-            _.configure(text="Not enough data")
+            _.config(text="Not enough data")
         _.configure(font=f"Verdana {10 if abs(i) == 2 else '12 italic' if abs(i) == 1 else '12 bold'}")
         label_list.append(_)
         hi_widget_list.append(_)
@@ -220,21 +184,21 @@ def scroll(event: Any) -> None:
 
 # Function to toggle Scientific Calculator
 def sci_cal() -> None:
-    if not sci_toggle.get():  # To Toggle On
+    if sci_toggle.get():  # To Toggle Off
+        sci_frame.pack_forget()
+        for widget in (*widget_list0, *widget_list1, all_clear):
+            widget.config(height=1, width=2, font="ariel 25 bold")
+        sci_toggle.set(False)
+
+    else:  # To Toggle On
         mid_button.pack_forget()
         mid_frame.pack_forget()
         for widget in (*widget_list0, *widget_list1, all_clear):
-            widget.configure(height=1, width=4, font="ariel 15")
+            widget.config(height=1, width=4, font="ariel 15")
         sci_frame.pack(padx=5, pady=0)
         mid_button.pack()
         mid_frame.pack()
         sci_toggle.set(True)
-
-    else:  # To Toggle Off
-        sci_frame.pack_forget()
-        for widget in (*widget_list0, *widget_list1, all_clear):
-            widget.configure(height=1, width=2, font="ariel 25 bold")
-        sci_toggle.set(False)
 
 
 # Function(s) to perform Trigonometry
@@ -301,28 +265,30 @@ def calculate_sc(event: Any) -> None:
 
 # Function to toggle Inverse
 def inv() -> None:
-    if not inv_toggle.get():  # To Toggle On
-        sci_upper_frame.pack_forget()
-        sci_lower_frame.pack_forget()
-        inverse_button.configure(bg=Col.inv_color, fg=Col.sci_fg,
-                                 activebackground=Col.inv_color, activeforeground=Col.sci_fg)
-        sci_upper_frame2.pack()
-        sci_lower_frame.pack()
-        inv_toggle.set(True)
-
-    elif inv_toggle.get():  # To Toggle Off
+    if inv_toggle.get():  # To Toggle Off
         sci_upper_frame2.pack_forget()
         sci_lower_frame.pack_forget()
+        inverse_button.config(bg=Col.sci_bg, fg=Col.sci_fg,
+                              activebackground=Col.inv_color, activeforeground=Col.sci_fg)
+
         sci_upper_frame.pack()
         sci_lower_frame.pack()
         inv_toggle.set(False)
+
+    else:  # To Toggle On
+        sci_upper_frame.pack_forget()
+        sci_lower_frame.pack_forget()
+
+        inverse_button.config(bg=Col.inv_color, fg=Col.sci_fg,
+                              activebackground=Col.inv_color, activeforeground=Col.sci_fg)
+        sci_upper_frame2.pack()
+        sci_lower_frame.pack()
+        inv_toggle.set(True)
 
 
 # The Actual GUI - Front_End
 root = Tk()
 
-# Boolean Variables
-aot_ = BooleanVar()
 modify(root)
 
 # Frames
@@ -338,12 +304,12 @@ photo = ImageTk.PhotoImage(Image.open("icon/icon.png").resize((45, 45), Image.AN
 label = Label(main_frame, text="Calculator", font="Verdana 13 ", justify="center")
 
 # AOT BUTTON
-label0 = Button(main_frame, image=photo, justify="center", bd=0, cursor="hand2", command=aot)
+label0 = Button(main_frame, image=photo, justify="center", bd=0, cursor="hand2", command=lambda: aot(root, label))
 
 # Radio Buttons for selecting theme
 variable_ = StringVar(value=Col.theme_name)
 # For exclusive radio buttons <Themes>
-themes = (Col.content["Theme 1"]["Theme Name"], Col.content["Theme 2"]["Theme Name"])
+themes = Col.content["Theme 1"]["Theme Name"], Col.content["Theme 2"]["Theme Name"]
 radio_list = [make_rad_btn(radio_frame, theme_, variable_, theme, 2, col) for col, theme_ in enumerate(themes)]
 
 # Screen Of the calculator - Entry Widget
@@ -382,13 +348,9 @@ all_clear.bind("<Enter>", change_on_hovering)
 all_clear.bind("<Leave>", return_on_hovering)
 
 # Packing the labels
+
 label.grid(row=0, column=2, columnspan=2)
 label0.grid(row=0, column=1, columnspan=1)
-
-# Packing the frames
-main_frame.pack(padx=0, pady=0, side="top")
-radio_frame.pack(padx=0, pady=0, side="top")
-screen_frame.pack(padx=0, pady=0, side="top")
 
 ##################################################################################################################
 
@@ -434,7 +396,6 @@ label_frame.grid(row=1, column=0)
 
 # Boolean Variables
 sci_toggle = BooleanVar()
-inv_toggle = BooleanVar()
 
 # Scientific Frames
 sci_frame = Frame(root)
@@ -467,11 +428,8 @@ for button in sci_list + sci_list2 + inverted_list:
 inverse_button.bind("<Enter>", change_on_hovering)
 inverse_button.bind("<Leave>", return_on_hovering)
 
-mid_button.pack()
-mid_frame.pack(padx=10, pady=0)
-sci_upper_frame.pack()
-sci_lower_frame.pack()
-
+# Packing the frames
+[_.pack() for _ in (main_frame, radio_frame, screen_frame, mid_button, mid_frame, sci_upper_frame, sci_lower_frame)]
 change()
 root.mainloop()
 ##################################################################################################################
