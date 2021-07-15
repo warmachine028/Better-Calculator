@@ -1,6 +1,18 @@
 # CHANGELOG
 
-    Updated on: 8th July 2021
+    Updated on: 15th July 2021
+
+## [V4.2.1]
+
+### _15th July 2021_
+
+- Minor Update: Restructure and reduction of code
+- Added a new BooleanVar Class in auxiliary.py to handle global booleans
+- Shifted return_on_hovering(), change_on_hovering(), aot() to auxiliary.py
+- Changed all configure() to coonfig()
+- Inverted all if-else in toggle functions
+- SEE CHANGELOG [auxiliary.py](..data\versions\auxiliary%20V1.1.py)
+- _COMPATIBLE WITH auxiliary VER: 1.1_
 
 ## [V4.2.0]
 
@@ -17,7 +29,7 @@
   - History Frame overlaps Scientific Frame
 - Renamed few variables according to PEP8 Naming Conventions
 - Reduced code by modifying calculate_sc()
-- SEE CHANGELOG [auxiliary.py](..\versions\auxiliary%20V1.0.py)
+- SEE CHANGELOG [auxiliary.py](..data\versions\auxiliary%20V1.0.py)
 - _COMPATIBLE WITH auxiliary VER: 1.0_
 
 ## [V4.1.2]
@@ -32,7 +44,7 @@
 
 - Known Bugs:
   - History Frames Overlap Scientific Frame
-- SEE CHANGELOG [auxiliary.py](..\versions\auxiliary%20V0.2.py)
+- SEE CHANGELOG [auxiliary.py](..data\versions\auxiliary%20V0.2.py)
 - _COMPATIBLE WITH auxiliary VER: 0.2_
 
 ## [V4.1.1]
@@ -47,7 +59,7 @@
   as createbtn() and createscibtn()
 - Removed TypeError from click()
 - Reverted lambda functions to normal functions
-- SEE CHANGELOG [auxiliary.py](..\versions\auxiliary%20V0.1.py)
+- SEE CHANGELOG [auxiliary.py](..data\versions\auxiliary%20V0.1.py)
 - _COMPATIBLE WITH auxiliary VER: 0.1_
 
 ## [V4.1.0]
@@ -56,7 +68,7 @@
 
 - Minor Update: Reduction & Restructuring of Code
 - Created new helper file _auxiliary.py_
-- Shifted 4 Functions into helper file: (see CHANGELOG: [auxiliary.py](..\auxiliary.py)
+- Shifted 4 Functions into helper file
 - Restructured functions in main.py
   - imports
   - functions
@@ -66,7 +78,7 @@
   - sc_bconfigure(button, text, ro, col) -> Configures Scientific Button properties & packs
 - Replaced all toggle variables to BooleanVars for easy function access (no globals)
 - Replaced Trigonometry functions to lambda functions
-- SEE CHANGELOG [auxiliary.py](..\versions\auxiliary%20V0.0.py)
+- SEE CHANGELOG [auxiliary.py](..data\versions\auxiliary%20V0.0.py)
 - _COMPATIBLE WITH auxiliary VER: 0.0_
 
 ## [V4.1]
@@ -122,7 +134,6 @@
 - Fixed redundant outputs on console
 - Fixed |INV| button activebackground
   colour when |INV| activated
-
 - Known Bugs:
   - App does'nt change selectcolor after changing theme
 
@@ -153,7 +164,6 @@
   flexibility in theme customization in future updates
 - Fixed Multiplication Button
 - Fixed redundant texts in terminal/console
-
 - Known Bugs:
   - App stops taking input randomly
 
@@ -165,7 +175,6 @@
 - over the Theme Radio Toggle Switches in Light theme
 - Changed Multiplication Button from 'x' to "×"
 - Changed Clear Button from "<-" to "⇐"
-
 - Known Bugs:
   - Multiplication function not working.
   - Console filling with redundant texts 'frame...'
@@ -192,7 +201,6 @@
 - Added more functionalities
 - Fixed (^) button
 - Fixed (e) button
-
 - Known Bugs:
   - Radio buttons initially not chosen (Theme button)
 
@@ -203,7 +211,6 @@
 - Minor improvements
 - Superimproved Button Attributes in themes
 - Fixed Inverse Button
-
 - Known Bugs:
   - Not Working (^) Button
   - Not Working (e) Button
@@ -216,14 +223,12 @@
 - Added Seperate colour codings
 - Added Exclusive Always on top feature
   (press calculator icon to Activate)
-
   - Dark:
     - Blue when Active
     - White while Deactive
   - Light:
     - Red when Active
     - Black while Deactive
-
 - Known Bugs:
   - Not working inverse Buttons
   - Not Working (^) Button
@@ -269,6 +274,5 @@
 
 - Starting with the basics
 - Added 2 themes
-
 - Known Bugs:
   - Radio Button does'nt show theme initially
