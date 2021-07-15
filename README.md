@@ -1,4 +1,4 @@
-    updated: Friday, 9th July 2021
+    updated: Friday, 15th July 2021
 
 <div align=center>
     <a href="https://warmachine028.github.io/Better-Calculator"><img width=200 src="images/icon2.png" alt="Better Calculator"></a>
@@ -12,7 +12,7 @@
 
 # [Better Calculator](https://github.com/warmachine028/Better-Calculator)
 
-## Whats new?
+## What's new?
 
 - Added a new icon in README
 - Addition of Clear History Feature
@@ -28,6 +28,7 @@
 - [Customizations](#customizations)
 - [Acknowlegement](#acknowlegement)
 - [Previews](#previews)
+- [Contributing](#contributing)
 - [License](#License)
 
 ---
@@ -36,11 +37,11 @@
 
 ## Introduction
 
-- This is my first Project in GitHub.
+- This is my first Project in github.
 - I'm trying to put all my dedication into it.
-- It's a full feature packed calculator.
+- It's a fully feature packed calculator.
 - A completely new concept.
-- Please contribute to it and show me how to improve my GitHub skills.
+- Please contribute to it and show me how to imporve my github skills.
 - Find issues and suggest changes.
 
 ---
@@ -163,14 +164,14 @@ $ git clone https://github.com/warmachine028/Better-Calculator
 ## Acknowlegement
 
 - I took up this project as a lockdown hobby but later turned it into a serious project as I had to do something for my University Assignment.
-- The pandemic was very booring and monotonic so I thought of making something which is necessary and fulfils the following criterias :-
+- The pandemic was very boring and monotonic, so I thought of making something which is necessary and fulfils the following criterias :-
 
   1. Useful
   2. Easy to use
   3. Minimalistic UX design
   4. Uses some GUI framework
 
-- Also those days I could'nt find an appropriate calculator application online which suited my choice and designs.
+- Also, those days I couldn't find an appropriate calculator application online which suited my choice and designs.
 - So I thought why not try to build one for myself and the community :)
 
 ## Previews
@@ -180,6 +181,18 @@ $ git clone https://github.com/warmachine028/Better-Calculator
 | ![dark](images/screen-calculator-dark.png) | ![light](images/screen-calculator.png) |
 |             **Midnight City**              |            **COMMING SOON**            |
 | ![midnight-city](images/midnight-city.jpg) |                                        |
+
+## Contributing
+
+### How To contribute to this Project ?
+
+- Fork this project
+- Clone the repository remotely
+- Create a new branch
+- Make changes
+- Push to your forked repository
+- Create PULL-REQUEST here
+- see [CONTRIBUTING]
 
 ## License
 
@@ -192,6 +205,7 @@ $ git clone https://github.com/warmachine028/Better-Calculator
 <!-- Links  -->
 
 [license]: https://github.com/warmachine028/Better-Calculator/blob/main/LICENSE
+[contributing]: https://github.com/warmachine028/Better-Calculator/blob/main/.github/CONTRIBUTING.md
 [releases]: https://github.com/warmachine028/Better-Calculator/releases
 [website]: "https://warmachine028.github.io/Better-Calculator/"
 [python 3.x]: https://www.python.org/downloads/release/python-396/
