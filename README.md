@@ -83,21 +83,21 @@ $ git clone https://github.com/warmachine028/Better-Calculator
 <details>
 <summary> 1. Use AOT feature </summary>
 
-AOT: Always On Top feature  
-Press the icon beside the label <code class="language-plaintext highlighter-rouge">Calculator</code>  
-<code class="language-plaintext highlighter-rouge">AOT ACTIVE</code>: colour of the label changes and becomes italic  
-<code class="language-plaintext highlighter-rouge">AOT INACTIVE</code>: colour of label reverts and becomes normal
-
+AOT: Always On Top feature <br>
+Press the icon beside the label <code class="language-plaintext highlighter-rouge">Calculator</code>  <br>
+<code class="language-plaintext highlighter-rouge">AOT ACTIVE</code>: colour of the label changes and becomes italic  <br>
+<code class="language-plaintext highlighter-rouge">AOT INACTIVE</code>: colour of label reverts and becomes normal  <br><br>
+    
 <img src="images/AOT.gif" alt="AOT.gif">
 </details>
 
 <details>
 <summary> 2. Use Scientific Mode </summary>
 
-Press the <code class="language-plaintext highlighter-rouge">=</code> button below Entry widget to open scientific menu  
-To activate inverse Trigonometric Functions press <code class="language-plaintext highlighter-rouge">INV</code>     
+Press the <code class="language-plaintext highlighter-rouge">=</code> button below Entry widget to open scientific menu <br>
+To activate inverse Trigonometric Functions press <code class="language-plaintext highlighter-rouge">INV</code> <br>
 <span style="color:green"> NOTE: </span>
-**To use <u>factorial function</u> press <code class="language-plaintext highlighter-rouge">!</code> first and then enter the input.**
+<b>To use <u>factorial function</u> press <code class="language-plaintext highlighter-rouge">!</code> first and then enter the input.</b> <br><br>
 
 <img src="images/scimode.gif" alt="sci-mode">
 </details>
@@ -105,9 +105,9 @@ To activate inverse Trigonometric Functions press <code class="language-plaintex
 <details>
 <summary> 3. Use History Feature </summary>
 
-Press <code class="language-plaintext highlighter-rouge">H</code> button beside AOT button to view history.  
-If log.txt is <i>Empty</i> the Labels will show: Not enough Data  
-See the history of calculations in reverse order.
+Press <code class="language-plaintext highlighter-rouge">H</code> button beside AOT button to view history. <br>
+If log.txt is <i>Empty</i> the Labels will show: Not enough Data <br>
+See the history of calculations in reverse order. <br><br>
 
 <img src="images/history.gif" alt="history">
 </details>
@@ -115,8 +115,8 @@ See the history of calculations in reverse order.
 <details>
 <summary> 4. Set a Custom theme </summary>
 
-Open <i>data/themes.json</i>  
-Rename <code class="language-plaintext highlighter-rouge">Theme 1</code> / <code class="language-plaintext highlighter-rouge">Theme 2</code> to the required themes
+Open <i>data/themes.json</i>  <br>
+Rename <code class="language-plaintext highlighter-rouge">Theme 1</code> / <code class="language-plaintext highlighter-rouge">Theme 2</code> to the required themes <br><br>
 
 
 <img src="images/themeset.gif" alt="changing-theme">
