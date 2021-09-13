@@ -28,14 +28,12 @@
 - [Usage](#usage)
 - [How to](#how-to)
 - [Customizations](#customizations)
-- [Acknowlegement](#acknowlegement)
+- [Acknowledgement](#acknowledgement)
 - [Previews](#previews)
 - [Contributing](#contributing)
 - [License](#License)
 
 ---
-
-<br>
 
 ## Introduction
 
@@ -82,49 +80,49 @@ $ git clone https://github.com/warmachine028/Better-Calculator
 
 ## How to
 
-> ### 1. <u> Use AOT feature </u>
->
-> AOT: Always On Top feature  
-> Press the icon beside the label `Calculator`  
-> `AOT ACTIVE`: colour of the label changes and becomes italic  
-> `AOT INACTIVE`: colour of label reverts and becomes normal
->
-> ![aot](images/AOT.gif)
+<details>
+<summary> 1. Use AOT feature </summary>
 
----
+AOT: Always On Top feature  
+Press the icon beside the label `Calculator`  
+`AOT ACTIVE`: colour of the label changes and becomes italic  
+`AOT INACTIVE`: colour of label reverts and becomes normal
 
-> ### 2. <u> Use Scientific Mode </u>
->
-> Press the `=` button below Entry widget to open scientific menu  
-> To activate inverse Trigonometric Functions press `INV`  
-> **To use <u> factorial function</u> press `!` first and then enter the input.**
->
-> ![sci-mode](images/scimode.gif)
+![aot](images/AOT.gif)
+</details>
 
----
+<details>
+<summary> 2. Use Scientific Mode </summary>
 
-> ### 3. <u> Use History Feature </u>
->
-> Press `H` button beside AOT button to view history.  
-> if log.txt is NULL the Labels will show: Not enough Data  
-> See the history of calculations in reverse order.
->
-> ![history](images/history.gif)
+Press the `=` button below Entry widget to open scientific menu  
+To activate inverse Trigonometric Functions press `INV`   
+<span style="color:green"> NOTE: </span>
+**To use <u>factorial function</u> press `!` first and then enter the input.**
 
----
+![sci-mode](images/scimode.gif)
+</details>
 
-> ### 4. <u> Set a Custom theme </u>
->
-> Open _data/themes.json_  
-> Rename `Theme 1` / `Theme 2` to the required themes
->
-> ![changing-theme](images/themeset.gif)
+<details>
+<summary> 3. Use History Feature </summary>
 
----
+Press `H` button beside AOT button to view history.  
+If log.txt is _Empty_ the Labels will show: Not enough Data  
+See the history of calculations in reverse order.
+
+![history](images/history.gif)
+</details>
+
+<details>
+<summary> 4. Set a Custom theme </summary>
+
+Open _data/themes.json_  
+Rename `Theme 1` / `Theme 2` to the required themes
+
+![changing-theme](images/themeset.gif)
+
+</details>
 
 ## Customizations
-
-![Customizations](images/custom.gif)
 
 - Common attributes
 
@@ -161,17 +159,21 @@ $ git clone https://github.com/warmachine028/Better-Calculator
 | `Hover Color`         | The color when mouse pointer is above scientific buttons |
 | `Hover Color \|INV\|` | The color when mouse is above "activated" inverse button |
 
----
+### Demo
 
-## Acknowlegement
+![Customizations](images/custom.gif)
 
-- I took up this project as a lockdown hobby but later turned it into a serious project as I had to do something for my University Assignment.
-- The pandemic was very boring and monotonic, so I thought of making something which is necessary and fulfils the following criterias :-
+## Acknowledgement
 
-  1. Useful
-  2. Easy to use
-  3. Minimalistic UX design
-  4. Uses some GUI framework
+- I took up this project as a lockdown hobby but later turned it into a serious project as I had to do something for my
+  University Assignment.
+- The pandemic was very boring and monotonic, so I thought of making something which is necessary and fulfils the
+  following criterias :-
+
+    1. Useful
+    2. Easy to use
+    3. Minimalistic UX design
+    4. Uses some GUI framework
 
 - Also, those days I couldn't find an appropriate calculator application online which suited my choice and designs.
 - So I thought why not try to build one for myself and the community :)
@@ -193,26 +195,35 @@ $ git clone https://github.com/warmachine028/Better-Calculator
 - Create a new branch
 - Make changes
 - Push to your forked repository
-- Create PULL-REQUEST here
+- Create [PULL-REQUEST] here
 - see [CONTRIBUTING]
 
 ## License
 
 - see [LICENSE]
 
-## ⠀
-
 **Pritam, 2021**
 
 <!-- Links  -->
 
 [license]: https://github.com/warmachine028/Better-Calculator/blob/main/LICENSE
+
 [contributing]: https://github.com/warmachine028/Better-Calculator/blob/main/.github/CONTRIBUTING.md
+
 [releases]: https://github.com/warmachine028/Better-Calculator/releases
+
 [website]: "https://warmachine028.github.io/Better-Calculator/"
+
 [python 3.x]: https://www.python.org/downloads/release/python-396/
+
 [pil]: https://pypi.org/project/Pillow
+
 [beta release]: https://github.com/warmachine028/Better-Calculator/releases/tag/V4.2.1-beta
+
 [themes.json]: https://github.com/warmachine028/Better-Calculator/blob/main/data/themes.json
+
 [changelog]: https://github.com/warmachine028/Better-Calculator/blob/main/.github/CHANGELOG.md
+
 [versions]: https://github.com/warmachine028/Better-Calculator/blob/main/data/versions
+
+[PULL-REQUEST]:https://github.com/warmachine028/Better-Calculator/blob/main/.github/PULL_REQUEST_TEMPLATE.md
