@@ -1,4 +1,4 @@
-    updated: Friday, 15th July 2021
+    updated: Monday, 13th September 2021
 
 <div align=center>
     <a href="https://warmachine028.github.io/Better-Calculator"><img width=200 src="images/icon2.png" alt="Better Calculator"></a>
