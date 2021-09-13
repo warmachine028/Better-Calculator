@@ -84,42 +84,42 @@ $ git clone https://github.com/warmachine028/Better-Calculator
 <summary> 1. Use AOT feature </summary>
 
 AOT: Always On Top feature  
-Press the icon beside the label `Calculator`  
-`AOT ACTIVE`: colour of the label changes and becomes italic  
-`AOT INACTIVE`: colour of label reverts and becomes normal
+Press the icon beside the label <code class="language-plaintext highlighter-rouge">Calculator</code>  
+<code class="language-plaintext highlighter-rouge">AOT ACTIVE</code>: colour of the label changes and becomes italic  
+<code class="language-plaintext highlighter-rouge">AOT INACTIVE</code>: colour of label reverts and becomes normal
 
-![aot](images/AOT.gif)
+<img src="images/AOT.gif" alt="AOT.gif">
 </details>
 
 <details>
 <summary> 2. Use Scientific Mode </summary>
 
-Press the `=` button below Entry widget to open scientific menu  
-To activate inverse Trigonometric Functions press `INV`   
+Press the <code class="language-plaintext highlighter-rouge">=</code> button below Entry widget to open scientific menu  
+To activate inverse Trigonometric Functions press <code class="language-plaintext highlighter-rouge">INV</code>     
 <span style="color:green"> NOTE: </span>
-**To use <u>factorial function</u> press `!` first and then enter the input.**
+**To use <u>factorial function</u> press <code class="language-plaintext highlighter-rouge">!</code> first and then enter the input.**
 
-![sci-mode](images/scimode.gif)
+<img src="images/scimode.gif" alt="sci-mode">
 </details>
 
 <details>
 <summary> 3. Use History Feature </summary>
 
-Press `H` button beside AOT button to view history.  
-If log.txt is _Empty_ the Labels will show: Not enough Data  
+Press <code class="language-plaintext highlighter-rouge">H</code> button beside AOT button to view history.  
+If log.txt is <i>Empty</i> the Labels will show: Not enough Data  
 See the history of calculations in reverse order.
 
-![history](images/history.gif)
+<img src="images/history.gif" alt="history">
 </details>
 
 <details>
 <summary> 4. Set a Custom theme </summary>
 
-Open _data/themes.json_  
-Rename `Theme 1` / `Theme 2` to the required themes
+Open <i>data/themes.json</i>  
+Rename <code class="language-plaintext highlighter-rouge">Theme 1</code> / <code class="language-plaintext highlighter-rouge">Theme 2</code> to the required themes
 
-![changing-theme](images/themeset.gif)
 
+<img src="images/themeset.gif" alt="changing-theme">
 </details>
 
 ## Customizations
